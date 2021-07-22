@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#"
+     xml:base="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000002 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000002">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="en">actedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000004 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000004">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="en">directed</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000005 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000005">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="en">hasDirector</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000006 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000006">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="en">hasActor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000000 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000000">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000005"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000006"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Movie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000001 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000001">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000002"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Acttor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000003 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000003">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000004"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lidij/ontologies/2021/6/untitled-ontology-96#ontodm-algorithms000000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Director</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
