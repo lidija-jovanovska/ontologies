@@ -1,0 +1,3004 @@
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix OntoDM-core: <http://www.ontodm.com/OntoDM-core/> .
+@prefix ace_lexicon: <http://attempto.ifi.uzh.ch/ace_lexicon#> .
+@base <http://www.ontodm.com/OntoDM-core/algorithms> .
+
+<http://www.ontodm.com/OntoDM-core/algorithms> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl
+ace_lexicon:CN_pl rdf:type owl:AnnotationProperty .
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg
+ace_lexicon:CN_sg rdf:type owl:AnnotationProperty .
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl
+ace_lexicon:TV_pl rdf:type owl:AnnotationProperty .
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg
+ace_lexicon:TV_sg rdf:type owl:AnnotationProperty .
+
+
+###  http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg
+ace_lexicon:TV_vbg rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+obo:IAO_0000115 rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontodm.com/OntoDM-core/Definition
+OntoDM-core:Definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLAnnotationProperty_0000000084
+:OWLAnnotationProperty_0000000084 rdf:type owl:AnnotationProperty ;
+                                  rdfs:label "big O notation"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLAnnotationProperty_0000000085
+:OWLAnnotationProperty_0000000085 rdf:type owl:AnnotationProperty ;
+                                  rdfs:label "text specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLAnnotationProperty_0000000086
+:OWLAnnotationProperty_0000000086 rdf:type owl:AnnotationProperty ;
+                                  rdfs:label "maths specification"@en .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.obofoundry.org/ro/ro.owl#has_part
+<http://www.obofoundry.org/ro/ro.owl#has_part> rdf:type owl:ObjectProperty ;
+                                               ace_lexicon:TV_pl "has_part" ;
+                                               ace_lexicon:TV_sg "has_parts" ;
+                                               ace_lexicon:TV_vbg "has_parted" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000310
+obo:IAO_0000310 rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                  owl:someValuesFrom OntoDM-core:OntoDM_000038
+                                ] ;
+                ace_lexicon:CN_pl "IAO_0000310s" ;
+                ace_lexicon:CN_sg "IAO_0000310" ;
+                rdfs:label """document
+""" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_0000045
+OntoDM-core:OntoDM_0000045 rdf:type owl:Class ;
+                           rdfs:subClassOf OntoDM-core:OntoDM_368779 ;
+                           ace_lexicon:CN_pl "OntoDM_0000045s" ;
+                           ace_lexicon:CN_sg "OntoDM_0000045" ;
+                           rdfs:label "SubBag"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000031
+OntoDM-core:OntoDM_000031 rdf:type owl:Class ;
+                          ace_lexicon:CN_pl "OntoDM_000031s" ;
+                          ace_lexicon:CN_sg "OntoDM_000031" ;
+                          obo:IAO_0000115 "a dataset specification is a data item specification about a dataset defined with a datatype specification of the data examples aggregated in the dataset." ;
+                          rdfs:label "dataset specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000034
+OntoDM-core:OntoDM_000034 rdf:type owl:Class ;
+                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom <http://www.ontodm.com/clus/OntoDM_001024>
+                                          ] ;
+                          ace_lexicon:CN_pl "OntoDM_000034s" ;
+                          ace_lexicon:CN_sg "OntoDM_000034" ;
+                          obo:IAO_0000115 "Generalization specification of a directive informational entity class that specifies the type of generalization. It includes information about the types of data used to produced the generalization and the language in which the generalization is expressed." ;
+                          rdfs:comment "represents class of generalizations as in Dzeroski paper" ;
+                          rdfs:label "generalization specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000037
+OntoDM-core:OntoDM_000037 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000034 ;
+                          ace_lexicon:CN_pl "OntoDM_000037s" ;
+                          ace_lexicon:CN_sg "OntoDM_000037" ;
+                          obo:IAO_0000115 "A ensemble of generalizations specification is a generalization specification and denotes a type of generalization that is produced by a ensemble algorithm. This algorithm produces a set of generalizations at its output." ;
+                          rdfs:label "ensemble specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000038
+OntoDM-core:OntoDM_000038 rdf:type owl:Class ;
+                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom obo:IAO_0000310
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom OntoDM-core:OntoDM_000034
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom OntoDM-core:OntoDM_000098
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom OntoDM-core:OntoDM_201436
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom :OWLClass_0000000001
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom :OWLClass_0000000025
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom :OWLClass_0000000047
+                                          ] ;
+                          ace_lexicon:CN_pl "OntoDM_000038s" ;
+                          ace_lexicon:CN_sg "OntoDM_000038" ;
+                          OntoDM-core:Definition "A data mining algorithm is an algorithm that solves a data mining task and as a results outputs a generalization. It is usually published in some document (journal publication or technical report)." ;
+                          rdfs:label "data mining algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000041
+OntoDM-core:OntoDM_000041 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000143 ;
+                          ace_lexicon:CN_pl "OntoDM_000041s" ;
+                          ace_lexicon:CN_sg "OntoDM_000041" ;
+                          rdfs:label "bootstrap sampling process" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000072
+OntoDM-core:OntoDM_000072 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_731692 ;
+                          ace_lexicon:CN_pl "OntoDM_000072s" ;
+                          ace_lexicon:CN_sg "OntoDM_000072" ;
+                          obo:IAO_0000115 "Clustering algorithm is a data mining algorithm that solves a clustering task and as a result produces a clustering." ;
+                          rdfs:label "clustering algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000078
+OntoDM-core:OntoDM_000078 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_419460 ;
+                          ace_lexicon:CN_pl "OntoDM_000078s" ;
+                          ace_lexicon:CN_sg "OntoDM_000078" ;
+                          obo:IAO_0000115 "A patten specification is a single generalization specification and denotes  a pattern P on type T which is a boolean funtion on objects of type T." ;
+                          rdfs:label "pattern specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000087
+OntoDM-core:OntoDM_000087 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_400001 ;
+                          ace_lexicon:CN_pl "OntoDM_000087s" ;
+                          ace_lexicon:CN_sg "OntoDM_000087" ;
+                          rdfs:comment "The task of estimating the joint probability distribution involves constructing a probability disctribution given  a set of data of a certain datatype." ;
+                          rdfs:label "batch probability distribution estimation task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000092
+OntoDM-core:OntoDM_000092 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_400001 ;
+                          ace_lexicon:CN_pl "OntoDM_000092s" ;
+                          ace_lexicon:CN_sg "OntoDM_000092" ;
+                          obo:IAO_0000115 "The task of pattern discovery is to find all local patterns from a given pattern language that satisfy the required conditions." ;
+                          rdfs:label "batch pattern discovery task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000098
+OntoDM-core:OntoDM_000098 rdf:type owl:Class ;
+                          ace_lexicon:CN_pl "OntoDM_000098s" ;
+                          ace_lexicon:CN_sg "OntoDM_000098" ;
+                          OntoDM-core:Definition "A data mining task is an objective specification that specifies the objective that a data mining algorithm needs to achieve when executed on a dataset to produce as output a generalization." ;
+                          rdfs:label "data mining task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000112
+OntoDM-core:OntoDM_000112 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_419460 ;
+                          ace_lexicon:CN_pl "OntoDM_000112s" ;
+                          ace_lexicon:CN_sg "OntoDM_000112" ;
+                          obo:IAO_0000115 "Clustering specification is a single generalization specification is a generalization specification and denotes a type of generalization that models the mapping of a set of objects S of type T from S to a set of natural numbers {1,...K}. This generalization is obtained by appliing a clustering algorithm on a set of data." ;
+                          rdfs:label "clustering specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000143
+OntoDM-core:OntoDM_000143 rdf:type owl:Class ;
+                          ace_lexicon:CN_pl "OntoDM_000143s" ;
+                          ace_lexicon:CN_sg "OntoDM_000143" ;
+                          rdfs:label "dataset sampling" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000149
+OntoDM-core:OntoDM_000149 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000143 ;
+                          ace_lexicon:CN_pl "OntoDM_000149s" ;
+                          ace_lexicon:CN_sg "OntoDM_000149" ;
+                          rdfs:label "holdout sampling process" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000160
+OntoDM-core:OntoDM_000160 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_731692 ;
+                          ace_lexicon:CN_pl "OntoDM_000160s" ;
+                          ace_lexicon:CN_sg "OntoDM_000160" ;
+                          obo:IAO_0000115 "Predictive modeling algorithm is a data mining algorithm that solves a predictive modeling task and as a result produces a predictive model." ;
+                          rdfs:label "predictive modeling algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000192
+OntoDM-core:OntoDM_000192 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_731692 ;
+                          ace_lexicon:CN_pl "OntoDM_000192s" ;
+                          ace_lexicon:CN_sg "OntoDM_000192" ;
+                          obo:IAO_0000115 "Pattern discovery algorithm is a data mining algorithm that solves a pattern discovery task and as a result produces a set of patterns." ;
+                          rdfs:label "pattern discovery algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000228
+OntoDM-core:OntoDM_000228 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_419460 ;
+                          ace_lexicon:CN_pl "OntoDM_000228s" ;
+                          ace_lexicon:CN_sg "OntoDM_000228" ;
+                          obo:IAO_0000115 "predictive model specification is a single generalization specification and denotes a type of generalization that represents a mapping taking objects of type Td and returns objects of type To." ;
+                          rdfs:label "predictive model specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000253
+OntoDM-core:OntoDM_000253 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_731692 ;
+                          ace_lexicon:CN_pl "OntoDM_000253s" ;
+                          ace_lexicon:CN_sg "OntoDM_000253" ;
+                          obo:IAO_0000115 "Probability distribution estimation algorithm is a data mining algorithm that solves a probability distribution estimation task and as a result produces a probability distribution." ;
+                          rdfs:label "probability distribution estimation algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000255
+OntoDM-core:OntoDM_000255 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000143 ;
+                          ace_lexicon:CN_pl "OntoDM_000255s" ;
+                          ace_lexicon:CN_sg "OntoDM_000255" ;
+                          rdfs:label "cross validation sampling process" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000264
+OntoDM-core:OntoDM_000264 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_400001 ;
+                          ace_lexicon:CN_pl "OntoDM_000264s" ;
+                          ace_lexicon:CN_sg "OntoDM_000264" ;
+                          rdfs:comment "The task of clustering in general is concerned with grouping objects into classes of similar objects. Given a set of examples (object descriptions), the task of clustering is to partition these examples into subsets, called clusters." ;
+                          rdfs:label "batch clustering task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_000285
+OntoDM-core:OntoDM_000285 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_419460 ;
+                          ace_lexicon:CN_pl "OntoDM_000285s" ;
+                          ace_lexicon:CN_sg "OntoDM_000285" ;
+                          obo:IAO_0000115 "A probability distribution  specification is a single generalization specification and denotes a type of generalization that is a mapping from objects of type T to non-negative reals. This generalization is an output of a probability distribution estimation algorithm." ;
+                          rdfs:label "probability distribution specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_001334
+OntoDM-core:OntoDM_001334 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_941793 ;
+                          ace_lexicon:CN_pl "OntoDM_001334s" ;
+                          ace_lexicon:CN_sg "OntoDM_001334" ;
+                          obo:IAO_0000115 "Regression algorithm is a data mining algorithm that solves a regression task and as a result produces a regression model." ;
+                          rdfs:label "regression algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_003932
+OntoDM-core:OntoDM_003932 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000228 ;
+                          ace_lexicon:CN_pl "OntoDM_003932s" ;
+                          ace_lexicon:CN_sg "OntoDM_003932" ;
+                          obo:IAO_0000115 "A predictive model for primitive output is a predictive model specification and denotes predictive models that are built on data having primitive datatype on the output part." ;
+                          rdfs:label "predictive model for primitive output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_020420
+OntoDM-core:OntoDM_020420 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_942737 ;
+                          ace_lexicon:CN_pl "OntoDM_020420s" ;
+                          ace_lexicon:CN_sg "OntoDM_020420" ;
+                          obo:IAO_0000115 "LCPN DAG-based hierarchical classification algorithm is a data mining algorithm that solves a DAG-based hierarchical classification task and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LCPN DAG based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_036834
+OntoDM-core:OntoDM_036834 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_174112 ;
+                          ace_lexicon:CN_pl "OntoDM_036834s" ;
+                          ace_lexicon:CN_sg "OntoDM_036834" ;
+                          obo:IAO_0000115 "LCPN tree-based hierarchical classification algorithm for multiple path and mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LPCN tree based HC algorithm for multiple path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_039503
+OntoDM-core:OntoDM_039503 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_112772 ;
+                          ace_lexicon:CN_pl "OntoDM_039503s" ;
+                          ace_lexicon:CN_sg "OntoDM_039503" ;
+                          obo:IAO_0000115 "A binary classification model is a classification model  and denotes predictive models that are built on data having a boolean datatype on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "binary classification model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_056700
+OntoDM-core:OntoDM_056700 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_372340 ;
+                          ace_lexicon:CN_pl "OntoDM_056700s" ;
+                          ace_lexicon:CN_sg "OntoDM_056700" ;
+                          obo:IAO_0000115 "DAG based hierarchical classification task with multiple label paths and full depth labeling is a DAG based hierarchical classification task where the objective is to predict a set of labels organized in a DAG (represented with a output DAG with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have multiple paths of labels and all instances have full depth of labeling." ;
+                          rdfs:label "DAG based hierarchical classification task with multiple label paths and full depth labeling"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_057491
+OntoDM-core:OntoDM_057491 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_491182 ;
+                          ace_lexicon:CN_pl "OntoDM_057491s" ;
+                          ace_lexicon:CN_sg "OntoDM_057491" ;
+                          obo:IAO_0000115 "DAG based hierarchical classification task with single label paths is a DAG based hierarchical classification task where the objective is to predict a set of labels organized in a DAG (represented with a output DAG with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have single paths of labels." ;
+                          rdfs:label "DAG based hierarchical classification task with single label paths"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_063973
+OntoDM-core:OntoDM_063973 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_960431 ;
+                          ace_lexicon:CN_pl "OntoDM_063973s" ;
+                          ace_lexicon:CN_sg "OntoDM_063973" ;
+                          obo:IAO_0000115 "DAG-based hierarchical classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a labeled DAG datatype with boolean edges and discrete nodes on the output part of the data." ;
+                          rdfs:label "DAG-based hierarchical classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_067028
+OntoDM-core:OntoDM_067028 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_495960 ;
+                          ace_lexicon:CN_pl "OntoDM_067028s" ;
+                          ace_lexicon:CN_sg "OntoDM_067028" ;
+                          obo:IAO_0000115 "Multi-target binary classification model is a multi-target classification model and denotes predictive models that are built on data having a tuple of boolean (set of output features) on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "multi-target binary classification model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_071450
+OntoDM-core:OntoDM_071450 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_942737 ;
+                          ace_lexicon:CN_pl "OntoDM_071450s" ;
+                          ace_lexicon:CN_sg "OntoDM_071450" ;
+                          obo:IAO_0000115 "LCL DAG-based hierarchical classification algorithm is a data mining algorithm that solves a DAG-based hierarchical classification task and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL DAG based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_078701
+OntoDM-core:OntoDM_078701 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_879928 ;
+                          ace_lexicon:CN_pl "OntoDM_078701s" ;
+                          ace_lexicon:CN_sg "OntoDM_078701" ;
+                          obo:IAO_0000115 "transactional dataset is a dataset specification of unlabeled dataset with a set of discrete datatype on the descriptive part of the data." ;
+                          rdfs:label "transactional dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_081165
+OntoDM-core:OntoDM_081165 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_464319 ;
+                          ace_lexicon:CN_pl "OntoDM_081165s" ;
+                          ace_lexicon:CN_sg "OntoDM_081165" ;
+                          obo:IAO_0000115 "LCN tree-based hierarchical classification algorithm for multiple path prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN tree based HC algorithm for multiple path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_086891
+OntoDM-core:OntoDM_086891 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_838789 ;
+                          ace_lexicon:CN_pl "OntoDM_086891s" ;
+                          ace_lexicon:CN_sg "OntoDM_086891" ;
+                          obo:IAO_0000115 "LCL DAG-based hierarchical classification algorithm for single path and mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with single label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL DAG based HC algorithm for single path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_099826
+OntoDM-core:OntoDM_099826 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000037 ;
+                          ace_lexicon:CN_pl "OntoDM_099826s" ;
+                          ace_lexicon:CN_sg "OntoDM_099826" ;
+                          obo:IAO_0000115 "predictive models ensemble specification is a ensemble specification and denotes a type of generalization that is produced by a predictive model ensemble algorithm. This algorithm produces a collection of predictive models at its output." ;
+                          rdfs:label "predictive models ensemble specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_104594
+OntoDM-core:OntoDM_104594 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_328701 ;
+                          ace_lexicon:CN_pl "OntoDM_104594s" ;
+                          ace_lexicon:CN_sg "OntoDM_104594" ;
+                          obo:IAO_0000115 "LCN DAG-based hierarchical classification algorithm for single path prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with single label paths and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN DAG based HC algorithm for single path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_107836
+OntoDM-core:OntoDM_107836 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_165764 ;
+                          ace_lexicon:CN_pl "OntoDM_107836s" ;
+                          ace_lexicon:CN_sg "OntoDM_107836" ;
+                          obo:IAO_0000115 "Hierarchical classification model is afeature-based predictive model for structured output and denotes predictive models that are built on data having a labeled graph datatype on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "hierarchical classification model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_108244
+OntoDM-core:OntoDM_108244 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_171503 ;
+                          ace_lexicon:CN_pl "OntoDM_108244s" ;
+                          ace_lexicon:CN_sg "OntoDM_108244" ;
+                          obo:IAO_0000115 "Multi-class classification is a data mining algorithm that solves a multi-class classification task and as a result produces a multi-class classification model." ;
+                          rdfs:label "multi-class classification algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_108452
+OntoDM-core:OntoDM_108452 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_485256 ;
+                          ace_lexicon:CN_pl "OntoDM_108452s" ;
+                          ace_lexicon:CN_sg "OntoDM_108452" ;
+                          rdfs:label "GC DAG based HC algorithm for multiple path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_112772
+OntoDM-core:OntoDM_112772 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_207566 ;
+                          ace_lexicon:CN_pl "OntoDM_112772s" ;
+                          ace_lexicon:CN_sg "OntoDM_112772" ;
+                          obo:IAO_0000115 "A classification model is a feature-based predictive model for primitive output and denotes predictive models that are built on data having boolean or discrete datatype on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "classification model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_114697
+OntoDM-core:OntoDM_114697 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_354620 ;
+                          ace_lexicon:CN_pl "OntoDM_114697s" ;
+                          ace_lexicon:CN_sg "OntoDM_114697" ;
+                          obo:IAO_0000115 "Multi-target prediction task is a feature-based structured output prediction task where the objective is to predict a set of features (represented with a output tuple of primitives datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised multi-target prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_135761
+OntoDM-core:OntoDM_135761 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_213136 ;
+                          ace_lexicon:CN_pl "OntoDM_135761s" ;
+                          ace_lexicon:CN_sg "OntoDM_135761" ;
+                          obo:IAO_0000115 "GC DAG-based hierarchical classification algorithm for single path prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with single label paths and as a result produces a hierarchical classification model using a global classifier (GC) approach." ;
+                          rdfs:label "GC DAG based HC algorithm for single path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_136533
+OntoDM-core:OntoDM_136533 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_583334 ;
+                          ace_lexicon:CN_pl "OntoDM_136533s" ;
+                          ace_lexicon:CN_sg "OntoDM_136533" ;
+                          obo:IAO_0000115 "Multi-target regression tree is a multi-target regression model and denotes predictive models that are built on data having a tuple of reals (set of output features) on the output part, set of features (represented by a descriptive tuple of primitives) on the descriptive part, and is expressed in the language of decision trees." ;
+                          rdfs:label "multi-target regression tree" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_139258
+OntoDM-core:OntoDM_139258 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_247241 ;
+                          ace_lexicon:CN_pl "OntoDM_139258s" ;
+                          ace_lexicon:CN_sg "OntoDM_139258" ;
+                          obo:IAO_0000115 "Multi-label decision tree  is a multi-label classification model and denotes predictive models that are built on data having a set of discrete datatype on the output part, set of features (represented by a descriptive tuple of primitives) on the descriptive part, and it is expressed in the language of decision trees." ;
+                          rdfs:label "multi-label decision tree" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_155699
+OntoDM-core:OntoDM_155699 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_171503 ;
+                          ace_lexicon:CN_pl "OntoDM_155699s" ;
+                          ace_lexicon:CN_sg "OntoDM_155699" ;
+                          obo:IAO_0000115 "Binary classification is a data mining algorithm that solves a binary classification task and as a result produces a binary classification model." ;
+                          rdfs:label "binary classification algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_157687
+OntoDM-core:OntoDM_157687 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_577929 ;
+                          ace_lexicon:CN_pl "OntoDM_157687s" ;
+                          ace_lexicon:CN_sg "OntoDM_157687" ;
+                          obo:IAO_0000115 "A structure-based predictive model for structured output is a predictive model specification and denotes predictive models that are built on data having structured datatype on the output part, and a structured datatype on the descriptive part." ;
+                          rdfs:label "structure-based predictive model for structured output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_165764
+OntoDM-core:OntoDM_165764 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_577929 ;
+                          ace_lexicon:CN_pl "OntoDM_165764s" ;
+                          ace_lexicon:CN_sg "OntoDM_165764" ;
+                          obo:IAO_0000115 "A feature-based predictive model for structured output is a predictive model specification and denotes predictive models that are built on data having a structured datatype on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "feature-based predictive model for structured output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_169891
+OntoDM-core:OntoDM_169891 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_879928 ;
+                          ace_lexicon:CN_pl "OntoDM_169891s" ;
+                          ace_lexicon:CN_sg "OntoDM_169891" ;
+                          obo:IAO_0000115 "unlabeled structure-based dataset  is a dataset specification of unlabeled dataset with a  structured descriptive datatype specification." ;
+                          rdfs:label "structure-based unlabeled dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_171503
+OntoDM-core:OntoDM_171503 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_941793 ;
+                          ace_lexicon:CN_pl "OntoDM_171503s" ;
+                          ace_lexicon:CN_sg "OntoDM_171503" ;
+                          obo:IAO_0000115 "Flat classification algorithm is a data mining algorithm that solves a classification task and as a result produces a classification model." ;
+                          rdfs:label "flat classification algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_174112
+OntoDM-core:OntoDM_174112 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_549140 ;
+                          ace_lexicon:CN_pl "OntoDM_174112s" ;
+                          ace_lexicon:CN_sg "OntoDM_174112" ;
+                          obo:IAO_0000115 "LCPN tree-based hierarchical classification algorithm for multiple path prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LPCN tree based HC algorithm for multiple path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_180345
+OntoDM-core:OntoDM_180345 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_328701 ;
+                          ace_lexicon:CN_pl "OntoDM_180345s" ;
+                          ace_lexicon:CN_sg "OntoDM_180345" ;
+                          obo:IAO_0000115 "LCN DAG-based hierarchical classification algorithm for multiple path prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN DAG based HC algorithm for multiple path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_201436
+OntoDM-core:OntoDM_201436 rdf:type owl:Class ;
+                          ace_lexicon:CN_pl "OntoDM_201436s" ;
+                          ace_lexicon:CN_sg "OntoDM_201436" ;
+                          obo:IAO_0000115 "parameter specification is a specification entity that is about a parameter." ;
+                          rdfs:label "parameter specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_205203
+OntoDM-core:OntoDM_205203 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_242219 ;
+                          ace_lexicon:CN_pl "OntoDM_205203s" ;
+                          ace_lexicon:CN_sg "OntoDM_205203" ;
+                          obo:IAO_0000115 "Feature-based primitive output prediction task is a predicting primitive output task where the objective is to predict a primitive output (represented with a primitive datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised feature-based primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_207566
+OntoDM-core:OntoDM_207566 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_003932 ;
+                          ace_lexicon:CN_pl "OntoDM_207566s" ;
+                          ace_lexicon:CN_sg "OntoDM_207566" ;
+                          obo:IAO_0000115 "A feature-based predictive model for primitive output is a predictive model specification and denotes predictive models that are built on data having primitive datatype on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "feature-based predictive model for primitive output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_208012
+OntoDM-core:OntoDM_208012 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_354620 ;
+                          ace_lexicon:CN_pl "OntoDM_208012s" ;
+                          ace_lexicon:CN_sg "OntoDM_208012" ;
+                          obo:IAO_0000115 "Time-series prediction task is a feature-based structured output prediction task where the objective is to predict a time series (represented with a output sequence of real datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised time-series prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_208659
+OntoDM-core:OntoDM_208659 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_387728 ;
+                          ace_lexicon:CN_pl "OntoDM_208659s" ;
+                          ace_lexicon:CN_sg "OntoDM_208659" ;
+                          obo:IAO_0000115 "binary classification task is a flat classification task where the objective is to predict a boolean output (represented with a boolean datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised binary classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_213136
+OntoDM-core:OntoDM_213136 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_311225 ;
+                          ace_lexicon:CN_pl "OntoDM_213136s" ;
+                          ace_lexicon:CN_sg "OntoDM_213136" ;
+                          obo:IAO_0000115 "GC DAG-based hierarchical classification algorithm is a data mining algorithm that solves a DAG-based hierarchical classification task and as a result produces a hierarchical classification model using a global classifier (GC) approach." ;
+                          rdfs:label "GC DAG based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_221045
+OntoDM-core:OntoDM_221045 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_613675 ;
+                          ace_lexicon:CN_pl "OntoDM_221045s" ;
+                          ace_lexicon:CN_sg "OntoDM_221045" ;
+                          obo:IAO_0000115 "LCN DAG-based hierarchical classification algorithm for single path and mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with single label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LCPN DAG based HC algorithm for single path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_225681
+OntoDM-core:OntoDM_225681 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_165764 ;
+                          ace_lexicon:CN_pl "OntoDM_225681s" ;
+                          ace_lexicon:CN_sg "OntoDM_225681" ;
+                          obo:IAO_0000115 "Multi-target prediction model is afeature-based predictive model for structured output and denotes predictive models that are built on data having a tuple of primitives (set of output features) on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "multi-target prediction model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_231548
+OntoDM-core:OntoDM_231548 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_733255 ;
+                          ace_lexicon:CN_pl "OntoDM_231548s" ;
+                          ace_lexicon:CN_sg "OntoDM_231548" ;
+                          obo:IAO_0000115 "Multi-target binary classification task is a multi-target classification task where the objective is to predict a set of binary features (represented with a output tuple of booleans ) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised multi-target binary classification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_232231
+OntoDM-core:OntoDM_232231 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_020420 ;
+                          ace_lexicon:CN_pl "OntoDM_232231s" ;
+                          ace_lexicon:CN_sg "OntoDM_232231" ;
+                          obo:IAO_0000115 "LCPN DAG-based hierarchical classification algorithm for multiple path prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LCPN DAG based HC algorithm for multiple path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_242219
+OntoDM-core:OntoDM_242219 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDT_10000000003 ;
+                          ace_lexicon:CN_pl "OntoDM_242219s" ;
+                          ace_lexicon:CN_sg "OntoDM_242219" ;
+                          obo:IAO_0000115 "predicting primitive output task is a predictive modeling task where the objective is to predict a primitive output (represented with a primitive datatype)." ;
+                          rdfs:label "supervised primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_246907
+OntoDM-core:OntoDM_246907 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_559103 ;
+                          ace_lexicon:CN_pl "OntoDM_246907s" ;
+                          ace_lexicon:CN_sg "OntoDM_246907" ;
+                          obo:IAO_0000115 "Tree based hierarchical classification task with single label paths and partial depth labeling is a tree based hierarchical classification task where the objective is to predict a set of labels organized in a tree (represented with a output tree with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have single paths of labels and at least one instance has a partial depth of labeling." ;
+                          rdfs:label "tree-based hierarchical classification task with single label paths and partial depth labeling"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_247241
+OntoDM-core:OntoDM_247241 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_165764 ;
+                          ace_lexicon:CN_pl "OntoDM_247241s" ;
+                          ace_lexicon:CN_sg "OntoDM_247241" ;
+                          obo:IAO_0000115 "Multi-label classification model is afeature-based predictive model for structured output and denotes predictive models that are built on data having a set of discrete datatype on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "multi-label classification model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_251508
+OntoDM-core:OntoDM_251508 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_470460 ;
+                          ace_lexicon:CN_pl "OntoDM_251508s" ;
+                          ace_lexicon:CN_sg "OntoDM_251508" ;
+                          obo:IAO_0000115 "LCPN tree-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LPCN tree based HC algorithm for single path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_257039
+OntoDM-core:OntoDM_257039 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_537602 ;
+                          ace_lexicon:CN_pl "OntoDM_257039s" ;
+                          ace_lexicon:CN_sg "OntoDM_257039" ;
+                          obo:IAO_0000115 "flat classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a boolean or discrete datatype on the output part of the data (specified with the feature specification). " ;
+                          rdfs:label "flat classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_257366
+OntoDM-core:OntoDM_257366 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_512674 ;
+                          ace_lexicon:CN_pl "OntoDM_257366s" ;
+                          ace_lexicon:CN_sg "OntoDM_257366" ;
+                          obo:IAO_0000115 "LCN tree-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN tree based HC algorithm for single path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_280661
+OntoDM-core:OntoDM_280661 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_688833 ;
+                          ace_lexicon:CN_pl "OntoDM_280661s" ;
+                          ace_lexicon:CN_sg "OntoDM_280661" ;
+                          obo:IAO_0000115 "A regression tree is a regression model and denotes predictive models that are built on data having a real datatype on the output part, set of features (represented by a descriptive tuple of primitives) on the descriptive part, and it is expressed in the language of decision trees." ;
+                          rdfs:label "regression tree" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_281640
+OntoDM-core:OntoDM_281640 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_057491 ;
+                          ace_lexicon:CN_pl "OntoDM_281640s" ;
+                          ace_lexicon:CN_sg "OntoDM_281640" ;
+                          obo:IAO_0000115 "DAG based hierarchical classification task with single label paths and partial depth labeling is a DAG based hierarchical classification task where the objective is to predict a set of labels organized in a DAG (represented with a output DAG with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have single paths of labels and at least one instance has a partial depth of labeling." ;
+                          rdfs:label "DAG based hierarchical classification task with single label paths and partial depth labeling"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_295724
+OntoDM-core:OntoDM_295724 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_871327 ;
+                          ace_lexicon:CN_pl "OntoDM_295724s" ;
+                          ace_lexicon:CN_sg "OntoDM_295724" ;
+                          obo:IAO_0000115 "Structure-based predictive modeling algorithm for structured output is a data mining algorithm that solves a structure-based structured output prediction task and as a result produces a structure-based predictive model for structured output." ;
+                          rdfs:label "structure-based predictive modeling algorithm for structured output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_300937
+OntoDM-core:OntoDM_300937 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_398436 ;
+                          ace_lexicon:CN_pl "OntoDM_300937s" ;
+                          ace_lexicon:CN_sg "OntoDM_300937" ;
+                          obo:IAO_0000115 "GC tree-based hierarchical classification algorithm for single path prediction is a data mining algorithm that solves a tree-based hierarchical classification task with single label paths and as a result produces a hierarchical classification model using a global classifier (GC) approach." ;
+                          rdfs:label "GC tree based HC algorithm for single path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_308048
+OntoDM-core:OntoDM_308048 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_960431 ;
+                          ace_lexicon:CN_pl "OntoDM_308048s" ;
+                          ace_lexicon:CN_sg "OntoDM_308048" ;
+                          obo:IAO_0000115 "hierarchical classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a labeled tree with boolean edges and discrete nodes datatype on the output part of the data." ;
+                          rdfs:label "tree-based hierarchical classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_311225
+OntoDM-core:OntoDM_311225 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_507935 ;
+                          ace_lexicon:CN_pl "OntoDM_311225s" ;
+                          ace_lexicon:CN_sg "OntoDM_311225" ;
+                          obo:IAO_0000115 "DAG-based hierarchical classification algorithm is a data mining algorithm that solves a DAG-based hierarchical classification task and as a result produces a hierarchical classification model." ;
+                          rdfs:label "DAG based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_316568
+OntoDM-core:OntoDM_316568 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_039503 ;
+                          ace_lexicon:CN_pl "OntoDM_316568s" ;
+                          ace_lexicon:CN_sg "OntoDM_316568" ;
+                          obo:IAO_0000115 "A binary decision tree is a binary classification model and denotes predictive models that are built on data having a boolean datatype on the output part, set of features (represented by a descriptive tuple of primitives) on the descriptive part, and it is expressed in the language of decision trees." ;
+                          rdfs:label "binary decision tree" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_318626
+OntoDM-core:OntoDM_318626 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000037 ;
+                          ace_lexicon:CN_pl "OntoDM_318626s" ;
+                          ace_lexicon:CN_sg "OntoDM_318626" ;
+                          obo:IAO_0000115 "Pattern set ensemble specification is a ensemble specification and denotes a type of generalization that is produced by a pattern set ensemble algorithm. This algorithm produces a collection of pattern sets at its output." ;
+                          rdfs:label "pattern set ensemble specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_319168
+OntoDM-core:OntoDM_319168 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_071450 ;
+                          ace_lexicon:CN_pl "OntoDM_319168s" ;
+                          ace_lexicon:CN_sg "OntoDM_319168" ;
+                          obo:IAO_0000115 "LCL DAG-based hierarchical classification algorithm for multiple path prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL DAG based HC algorithm for multiple path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_328701
+OntoDM-core:OntoDM_328701 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_942737 ;
+                          ace_lexicon:CN_pl "OntoDM_328701s" ;
+                          ace_lexicon:CN_sg "OntoDM_328701" ;
+                          obo:IAO_0000115 "LCN DAG-based hierarchical classification algorithm is a data mining algorithm that solves a DAG-based hierarchical classification task and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN DAG based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_353154
+OntoDM-core:OntoDM_353154 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_512674 ;
+                          ace_lexicon:CN_pl "OntoDM_353154s" ;
+                          ace_lexicon:CN_sg "OntoDM_353154" ;
+                          obo:IAO_0000115 "LCN tree-based hierarchical classification algorithm for single path and mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with single label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN tree based HC algorithm for single path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_354620
+OntoDM-core:OntoDM_354620 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_600958 ;
+                          ace_lexicon:CN_pl "OntoDM_354620s" ;
+                          ace_lexicon:CN_sg "OntoDM_354620" ;
+                          obo:IAO_0000115 "Feature-based structured output prediction task is a predicting structured output task where the objective is to predict a structured output (represented with a output structured datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised feature-based structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_357792
+OntoDM-core:OntoDM_357792 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_368779 ;
+                          ace_lexicon:CN_pl "OntoDM_357792s" ;
+                          ace_lexicon:CN_sg "OntoDM_357792" ;
+                          rdfs:label "Random Subspaces" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_368254
+OntoDM-core:OntoDM_368254 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_165764 ;
+                          ace_lexicon:CN_pl "OntoDM_368254s" ;
+                          ace_lexicon:CN_sg "OntoDM_368254" ;
+                          obo:IAO_0000115 "Time-series prediction model is afeature-based predictive model for structured output and denotes predictive models that are built on data having a sequence of reals on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "time series prediction model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_368779
+OntoDM-core:OntoDM_368779 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_530819 ;
+                          ace_lexicon:CN_pl "OntoDM_368779s" ;
+                          ace_lexicon:CN_sg "OntoDM_368779" ;
+                          obo:IAO_0000115 "Predictive modeling ensemble algorithm is a data mining algorithm that solves a predictive modeling task and as a result produces a ensemble of predictive models." ;
+                          rdfs:label "predictive modelling ensemble algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_369100
+OntoDM-core:OntoDM_369100 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_865023 ;
+                          ace_lexicon:CN_pl "OntoDM_369100s" ;
+                          ace_lexicon:CN_sg "OntoDM_369100" ;
+                          obo:IAO_0000115 "A multi-class decision tree is a multi-class classification model and denotes predictive models that are built on data having a discrete datatype on the output part, set of features (represented by a descriptive tuple of primitives) on the descriptive part, and it is expressed in the language of decision trees." ;
+                          rdfs:label "multi-class decision tree" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_372340
+OntoDM-core:OntoDM_372340 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_491182 ;
+                          ace_lexicon:CN_pl "OntoDM_372340s" ;
+                          ace_lexicon:CN_sg "OntoDM_372340" ;
+                          obo:IAO_0000115 "DAG based hierarchical classification task with multiple label paths is a DAG based hierarchical classification task where the objective is to predict a set of labels organized in a DAG (represented with a output DAG with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have multiple paths of labels." ;
+                          rdfs:label "DAG based hierarchical classification task with multiple label paths"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_372936
+OntoDM-core:OntoDM_372936 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000031 ;
+                          ace_lexicon:CN_pl "OntoDM_372936s" ;
+                          ace_lexicon:CN_sg "OntoDM_372936" ;
+                          obo:IAO_0000115 "labeled dataset is a dataset specification for datasets that have both a descriptive and output specification of the data examples contained in the dataset." ;
+                          rdfs:label "labeled dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_373964
+OntoDM-core:OntoDM_373964 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_826903 ;
+                          ace_lexicon:CN_pl "OntoDM_373964s" ;
+                          ace_lexicon:CN_sg "OntoDM_373964" ;
+                          obo:IAO_0000115 "Tree based hierarchical classification task with multiple label paths and full depth labeling is a tree based hierarchical classification task where the objective is to predict a set of labels organized in a tree (represented with a output treewith boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have multiple paths of labels and all instances have full depth of labeling." ;
+                          rdfs:label "tree-based hierarchical classification task with multiple label paths and full depth labeling"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_374511
+OntoDM-core:OntoDM_374511 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_368254 ;
+                          ace_lexicon:CN_pl "OntoDM_374511s" ;
+                          ace_lexicon:CN_sg "OntoDM_374511" ;
+                          obo:IAO_0000115 "Time-series prediction decision tree is a time-series prediction model and denotes predictive models that are built on data having a sequence of reals on the output part, set of features (represented by a descriptive tuple of primitives) on the descriptive part, and is expressed in the language of decision trees." ;
+                          rdfs:label "time-series prediction decision tree" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_376810
+OntoDM-core:OntoDM_376810 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_470460 ;
+                          ace_lexicon:CN_pl "OntoDM_376810s" ;
+                          ace_lexicon:CN_sg "OntoDM_376810" ;
+                          obo:IAO_0000115 "LCN tree-based hierarchical classification algorithm for single path and mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with single label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LPCN tree based HC algorithm for single path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_382943
+OntoDM-core:OntoDM_382943 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000160 ;
+                          ace_lexicon:CN_pl "OntoDM_382943s" ;
+                          ace_lexicon:CN_sg "OntoDM_382943" ;
+                          obo:IAO_0000115 "Predictive modeling algorithm for primitive output is a data mining algorithm that solves a predicting primitive output task and as a result produces a predictive model for primitive output." ;
+                          rdfs:label "predictive modeling algorithm for primitive output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_387728
+OntoDM-core:OntoDM_387728 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_205203 ;
+                          ace_lexicon:CN_pl "OntoDM_387728s" ;
+                          ace_lexicon:CN_sg "OntoDM_387728" ;
+                          obo:IAO_0000115 "flat classification task is a feature-based primitive output task where the objective is to predict a boolean or discrete output (represented with a boolean or discrete datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised flat classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_388961
+OntoDM-core:OntoDM_388961 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_793930 ;
+                          ace_lexicon:CN_pl "OntoDM_388961s" ;
+                          ace_lexicon:CN_sg "OntoDM_388961" ;
+                          obo:IAO_0000115 "LCL tree-based hierarchical classification algorithm for multiple path prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL tree based HC algorithm for multiple path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_398436
+OntoDM-core:OntoDM_398436 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_419418 ;
+                          ace_lexicon:CN_pl "OntoDM_398436s" ;
+                          ace_lexicon:CN_sg "OntoDM_398436" ;
+                          obo:IAO_0000115 "GC tree-based hierarchical classification algorithm is a data mining algorithm that solves a tree-based hierarchical classification task and as a result produces a hierarchical classification model using a global classifier (GC) approach." ;
+                          rdfs:label "GC tree-based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_400001
+OntoDM-core:OntoDM_400001 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000098 ;
+                          rdfs:label "batch data mining task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_400002
+OntoDM-core:OntoDM_400002 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000098 ;
+                          rdfs:label "online data mining task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_400003
+OntoDM-core:OntoDM_400003 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_400002 ;
+                          rdfs:label "online clustering task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_400004
+OntoDM-core:OntoDM_400004 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_400002 ;
+                          rdfs:label "online pattern discovery task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_400005
+OntoDM-core:OntoDM_400005 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_400002 ;
+                          rdfs:label "online probability distribution estimation task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_408772
+OntoDM-core:OntoDM_408772 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_180345 ;
+                          ace_lexicon:CN_pl "OntoDM_408772s" ;
+                          ace_lexicon:CN_sg "OntoDM_408772" ;
+                          obo:IAO_0000115 "LCN DAG-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN DAG based HC algorithm for multiple path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_419418
+OntoDM-core:OntoDM_419418 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_507935 ;
+                          ace_lexicon:CN_pl "OntoDM_419418s" ;
+                          ace_lexicon:CN_sg "OntoDM_419418" ;
+                          obo:IAO_0000115 "Tree-based hierarchical classification algorithm is a data mining algorithm that solves a tree-based hierarchical classification task and as a result produces a hierarchical classification model." ;
+                          rdfs:label "tree-based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_419460
+OntoDM-core:OntoDM_419460 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000034 ;
+                          ace_lexicon:CN_pl "OntoDM_419460s" ;
+                          ace_lexicon:CN_sg "OntoDM_419460" ;
+                          obo:IAO_0000115 "A single generalization specification is a generalization specification and denotes a type of generalization that is produced by a single generalization data mining algorithm. This algorithm produces only one generalization at its output." ;
+                          rdfs:label "single generalization specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_429658
+OntoDM-core:OntoDM_429658 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_530819 ;
+                          ace_lexicon:CN_pl "OntoDM_429658s" ;
+                          ace_lexicon:CN_sg "OntoDM_429658" ;
+                          obo:IAO_0000115 "Clustering ensemble algorithm is a data mining algorithm that solves a clustering task and as a result produces an ensemble of clusterings." ;
+                          rdfs:label "clustering ensemble algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_433774
+OntoDM-core:OntoDM_433774 rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontodm.com/clus/OntoDM_001024> ;
+                          ace_lexicon:CN_pl "OntoDM_433774s" ;
+                          ace_lexicon:CN_sg "OntoDM_433774" ;
+                          rdfs:label "language of markov chains" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_452759
+OntoDM-core:OntoDM_452759 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_368779 ;
+                          ace_lexicon:CN_pl "OntoDM_452759s" ;
+                          ace_lexicon:CN_sg "OntoDM_452759" ;
+                          rdfs:label "Bagging" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_462575
+OntoDM-core:OntoDM_462575 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_831808 ;
+                          ace_lexicon:CN_pl "OntoDM_462575s" ;
+                          ace_lexicon:CN_sg "OntoDM_462575" ;
+                          obo:IAO_0000115 "Time-series predictive modeling algorithm is a data mining algorithm that solves a time-series classification task and as a result produces a time series predictive model." ;
+                          rdfs:label "time-series predictive modelling algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_464319
+OntoDM-core:OntoDM_464319 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_540049 ;
+                          ace_lexicon:CN_pl "OntoDM_464319s" ;
+                          ace_lexicon:CN_sg "OntoDM_464319" ;
+                          obo:IAO_0000115 "LCN tree-based hierarchical classification algorithm is a data mining algorithm that solves a tree-based hierarchical classification task and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN tree based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_464484
+OntoDM-core:OntoDM_464484 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_530819 ;
+                          ace_lexicon:CN_pl "OntoDM_464484s" ;
+                          ace_lexicon:CN_sg "OntoDM_464484" ;
+                          obo:IAO_0000115 "Probability distribution estimation ensemble algorithm is a data mining algorithm that solves a probablility distribution estimation task and as a result produces a ensemble of probability distributions." ;
+                          rdfs:label "probability distribution estimation ensemble algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_467074
+OntoDM-core:OntoDM_467074 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_232231 ;
+                          ace_lexicon:CN_pl "OntoDM_467074s" ;
+                          ace_lexicon:CN_sg "OntoDM_467074" ;
+                          obo:IAO_0000115 "LCPN DAG-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LCPN DAG based HC algorithm for multiple path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_470460
+OntoDM-core:OntoDM_470460 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_549140 ;
+                          ace_lexicon:CN_pl "OntoDM_470460s" ;
+                          ace_lexicon:CN_sg "OntoDM_470460" ;
+                          obo:IAO_0000115 "LCPN tree-based hierarchical classification algorithm for single path prediction is a data mining algorithm that solves a tree-based hierarchical classification task with single label paths and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LPCN tree based HC algorithm for single path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_474912
+OntoDM-core:OntoDM_474912 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_669483 ;
+                          ace_lexicon:CN_pl "OntoDM_474912s" ;
+                          ace_lexicon:CN_sg "OntoDM_474912" ;
+                          obo:IAO_0000115 "LCL tree-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL tree based HC algorithm for single path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_481568
+OntoDM-core:OntoDM_481568 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_495960 ;
+                          ace_lexicon:CN_pl "OntoDM_481568s" ;
+                          ace_lexicon:CN_sg "OntoDM_481568" ;
+                          obo:IAO_0000115 "Multi-target multi-class classification model is a multi-target classification model and denotes predictive models that are built on data having a tuple of discrete (set of output features) on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "multi-target multi-class classification model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_485256
+OntoDM-core:OntoDM_485256 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_213136 ;
+                          ace_lexicon:CN_pl "OntoDM_485256s" ;
+                          ace_lexicon:CN_sg "OntoDM_485256" ;
+                          obo:IAO_0000115 "GC DAG-based hierarchical classification algorithm for multiple path prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and as a result produces a hierarchical classification model using a global classifier (GC) approach." ;
+                          rdfs:label "GC DAG based HC algorithm for multiple path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_490530
+OntoDM-core:OntoDM_490530 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000037 ;
+                          ace_lexicon:CN_pl "OntoDM_490530s" ;
+                          ace_lexicon:CN_sg "OntoDM_490530" ;
+                          obo:IAO_0000115 "clusterings ensemble specification is a ensemble specification and denotes a type of generalization that is produced by a clustering ensemble algorithm. This algorithm produces a set of clusterings at its output." ;
+                          rdfs:label "clusterings ensemble specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_491182
+OntoDM-core:OntoDM_491182 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_931732 ;
+                          ace_lexicon:CN_pl "OntoDM_491182s" ;
+                          ace_lexicon:CN_sg "OntoDM_491182" ;
+                          obo:IAO_0000115 "DAG based hierarchical classification task is a hierarchical classification task where the objective is to predict a set of labels organized in a DAG (represented with a output DAG with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised DAG based hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_495960
+OntoDM-core:OntoDM_495960 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_225681 ;
+                          ace_lexicon:CN_pl "OntoDM_495960s" ;
+                          ace_lexicon:CN_sg "OntoDM_495960" ;
+                          obo:IAO_0000115 "Multi-target classification model is a multi-target prediction model and denotes predictive models that are built on data having a tuple of boolean or discrete (set of output features) on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "multi-target classification model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_506961
+OntoDM-core:OntoDM_506961 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_114697 ;
+                          ace_lexicon:CN_pl "OntoDM_506961s" ;
+                          ace_lexicon:CN_sg "OntoDM_506961" ;
+                          obo:IAO_0000115 "Multi-target regression task is a multi-target prediction task where the objective is to predict a set of real features (represented with a output tuple of reals) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised multi-target regression task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_507935
+OntoDM-core:OntoDM_507935 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_831808 ;
+                          ace_lexicon:CN_pl "OntoDM_507935s" ;
+                          ace_lexicon:CN_sg "OntoDM_507935" ;
+                          obo:IAO_0000115 "Hierarchical classification algorithm is a data mining algorithm that solves a hierarchical classification task and as a result produces a hierarchical classification model." ;
+                          rdfs:label "hierarchical classification algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_510504
+OntoDM-core:OntoDM_510504 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_354620 ;
+                          ace_lexicon:CN_pl "OntoDM_510504s" ;
+                          ace_lexicon:CN_sg "OntoDM_510504" ;
+                          obo:IAO_0000115 "Multi-label classification task is a feature-based structured output prediction task where the objective is to predict a set of discrete output labels (represented with a output set of discrete datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised multi-label classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_512674
+OntoDM-core:OntoDM_512674 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_464319 ;
+                          ace_lexicon:CN_pl "OntoDM_512674s" ;
+                          ace_lexicon:CN_sg "OntoDM_512674" ;
+                          obo:IAO_0000115 "LCN tree-based hierarchical classification algorithm for single path prediction is a data mining algorithm that solves a tree-based hierarchical classification task with single label paths and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN tree based HC algorithm for single path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_519526
+OntoDM-core:OntoDM_519526 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_300937 ;
+                          ace_lexicon:CN_pl "OntoDM_519526s" ;
+                          ace_lexicon:CN_sg "OntoDM_519526" ;
+                          rdfs:label "GC tree based HC algorithm for single path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_528443
+OntoDM-core:OntoDM_528443 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_388961 ;
+                          ace_lexicon:CN_pl "OntoDM_528443s" ;
+                          ace_lexicon:CN_sg "OntoDM_528443" ;
+                          obo:IAO_0000115 "LCL tree-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL tree based HC algorithm for multiple path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_530819
+OntoDM-core:OntoDM_530819 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000038 ;
+                          ace_lexicon:CN_pl "OntoDM_530819s" ;
+                          ace_lexicon:CN_sg "OntoDM_530819" ;
+                          obo:IAO_0000115 "A ensemble algorithm is a data mining algorithm that solves a data mining task and as a result produces an ensemble of generalizations." ;
+                          rdfs:label "ensemble algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_532190
+OntoDM-core:OntoDM_532190 rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontodm.com/clus/OntoDM_001024> ;
+                          ace_lexicon:CN_pl "OntoDM_532190s" ;
+                          ace_lexicon:CN_sg "OntoDM_532190" ;
+                          rdfs:label "language of neural nets" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_535716
+OntoDM-core:OntoDM_535716 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000037 ;
+                          ace_lexicon:CN_pl "OntoDM_535716s" ;
+                          ace_lexicon:CN_sg "OntoDM_535716" ;
+                          obo:IAO_0000115 "Probability distributions specification is a ensemble specification and denotes a type of generalization that is produced by a probability distribution estimation ensemble algorithm. This algorithm produces a set of probability distributions at its output." ;
+                          rdfs:label "probability distributions ensemble specification" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_537602
+OntoDM-core:OntoDM_537602 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_849533 ;
+                          ace_lexicon:CN_pl "OntoDM_537602s" ;
+                          ace_lexicon:CN_sg "OntoDM_537602" ;
+                          obo:IAO_0000115 "labeled feature-based dataset with primitive output is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a primitive datatype on the output part of the data (specified with the output feature specification). " ;
+                          rdfs:label "feature-based completely labeled dataset with primitive output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_540049
+OntoDM-core:OntoDM_540049 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_419418 ;
+                          ace_lexicon:CN_pl "OntoDM_540049s" ;
+                          ace_lexicon:CN_sg "OntoDM_540049" ;
+                          obo:IAO_0000115 "LC tree-based hierarchical classification algorithm is a data mining algorithm that solves a tree-based hierarchical classification task and as a result produces a hierarchical classification model using a local classifier (LC) approach." ;
+                          rdfs:label "LC tree based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_541005
+OntoDM-core:OntoDM_541005 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_666475 ;
+                          ace_lexicon:CN_pl "OntoDM_541005s" ;
+                          ace_lexicon:CN_sg "OntoDM_541005" ;
+                          obo:IAO_0000115 "multi-label classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a set of discrete datatype on the output part of the data." ;
+                          rdfs:label "multi-label classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_542264
+OntoDM-core:OntoDM_542264 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_931732 ;
+                          ace_lexicon:CN_pl "OntoDM_542264s" ;
+                          ace_lexicon:CN_sg "OntoDM_542264" ;
+                          obo:IAO_0000115 "Tree based hierarchical classification task is a hierarchical classification task where the objective is to predict a set of labels organized in a tree (represented with a output tree with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised tree-based hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_549140
+OntoDM-core:OntoDM_549140 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_540049 ;
+                          ace_lexicon:CN_pl "OntoDM_549140s" ;
+                          ace_lexicon:CN_sg "OntoDM_549140" ;
+                          obo:IAO_0000115 "LCPN tree-based hierarchical classification algorithm is a data mining algorithm that solves a tree-based hierarchical classification task and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LCPN tree based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_555011
+OntoDM-core:OntoDM_555011 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_104594 ;
+                          ace_lexicon:CN_pl "OntoDM_555011s" ;
+                          ace_lexicon:CN_sg "OntoDM_555011" ;
+                          obo:IAO_0000115 "LCN DAG-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN DAG based HC algorithm for single path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_559103
+OntoDM-core:OntoDM_559103 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_542264 ;
+                          ace_lexicon:CN_pl "OntoDM_559103s" ;
+                          ace_lexicon:CN_sg "OntoDM_559103" ;
+                          obo:IAO_0000115 "Tree based hierarchical classification task with single label paths is a tree based hierarchical classification task where the objective is to predict a set of labels organized in a tree (represented with a output tree with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have a single paths of labels." ;
+                          rdfs:label "tree-based hierarchical classification task with single label paths"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_565974
+OntoDM-core:OntoDM_565974 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_746568 ;
+                          ace_lexicon:CN_pl "OntoDM_565974s" ;
+                          ace_lexicon:CN_sg "OntoDM_565974" ;
+                          obo:IAO_0000115 "multi-target regression dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a tuple of reals (specified with the feature set specification) on the output part of the data." ;
+                          rdfs:label "multi-target regression dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_570767
+OntoDM-core:OntoDM_570767 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_831808 ;
+                          ace_lexicon:CN_pl "OntoDM_570767s" ;
+                          ace_lexicon:CN_sg "OntoDM_570767" ;
+                          obo:IAO_0000115 "Multi-label classification algorithm is a data mining algorithm that solves a multi-label classification task and as a result produces a multi-label classification model." ;
+                          rdfs:label "multi-label classification algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_572839
+OntoDM-core:OntoDM_572839 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_669483 ;
+                          ace_lexicon:CN_pl "OntoDM_572839s" ;
+                          ace_lexicon:CN_sg "OntoDM_572839" ;
+                          obo:IAO_0000115 "LCL tree-based hierarchical classification algorithm for single path and mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with single label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL tree based HC algorithm for single path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_577929
+OntoDM-core:OntoDM_577929 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000228 ;
+                          ace_lexicon:CN_pl "OntoDM_577929s" ;
+                          ace_lexicon:CN_sg "OntoDM_577929" ;
+                          obo:IAO_0000115 "A predictive model for structured output is a predictive model specification and denotes predictive models that are built on data having a structured datatype on the output part." ;
+                          rdfs:label "predictive model for structured output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_583334
+OntoDM-core:OntoDM_583334 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_225681 ;
+                          ace_lexicon:CN_pl "OntoDM_583334s" ;
+                          ace_lexicon:CN_sg "OntoDM_583334" ;
+                          obo:IAO_0000115 "Multi-target regression model is a multi-target prediction model and denotes predictive models that are built on data having a tuple of reals (set of output features) on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "multi-target regression model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_585235
+OntoDM-core:OntoDM_585235 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_319168 ;
+                          ace_lexicon:CN_pl "OntoDM_585235s" ;
+                          ace_lexicon:CN_sg "OntoDM_585235" ;
+                          obo:IAO_0000115 "LCL DAG-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL DAG based HC algorithm for multiple path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_600958
+OntoDM-core:OntoDM_600958 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDT_10000000003 ;
+                          ace_lexicon:CN_pl "OntoDM_600958s" ;
+                          ace_lexicon:CN_sg "OntoDM_600958" ;
+                          obo:IAO_0000115 "predicting structured output task is a predictive modeling task where the objective is to predict a structured output (represented with a structured datatype)." ;
+                          rdfs:label "supervised structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_608558
+OntoDM-core:OntoDM_608558 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_879928 ;
+                          ace_lexicon:CN_pl "OntoDM_608558s" ;
+                          ace_lexicon:CN_sg "OntoDM_608558" ;
+                          obo:IAO_0000115 "unlabeled feature-based dataset  is a dataset specification of unlabeled dataset with tuple of primitives as a descriptive datatype specification and descriptive feature set specification." ;
+                          rdfs:label "feature-based unlabeled dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_609184
+OntoDM-core:OntoDM_609184 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_257039 ;
+                          ace_lexicon:CN_pl "OntoDM_609184s" ;
+                          ace_lexicon:CN_sg "OntoDM_609184" ;
+                          obo:IAO_0000115 "binary classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a boolean datatype on the output part of the data (specified with the feature specification). " ;
+                          rdfs:label "binary classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_611937
+OntoDM-core:OntoDM_611937 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_300937 ;
+                          ace_lexicon:CN_pl "OntoDM_611937s" ;
+                          ace_lexicon:CN_sg "OntoDM_611937" ;
+                          rdfs:label "GC tree based HC algorithm for single path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_613675
+OntoDM-core:OntoDM_613675 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_020420 ;
+                          ace_lexicon:CN_pl "OntoDM_613675s" ;
+                          ace_lexicon:CN_sg "OntoDM_613675" ;
+                          obo:IAO_0000115 "LCPN DAG-based hierarchical classification algorithm for single path prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with single label paths and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LCPN DAG based HC algorithm for single path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_613950
+OntoDM-core:OntoDM_613950 rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontodm.com/clus/OntoDM_001024> ;
+                          ace_lexicon:CN_pl "OntoDM_613950s" ;
+                          ace_lexicon:CN_sg "OntoDM_613950" ;
+                          rdfs:label "language of graphical models" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_616457
+OntoDM-core:OntoDM_616457 rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontodm.com/clus/OntoDM_001024> ;
+                          ace_lexicon:CN_pl "OntoDM_616457s" ;
+                          ace_lexicon:CN_sg "OntoDM_616457" ;
+                          rdfs:label "language of decision rules" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_620805
+OntoDM-core:OntoDM_620805 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_057491 ;
+                          ace_lexicon:CN_pl "OntoDM_620805s" ;
+                          ace_lexicon:CN_sg "OntoDM_620805" ;
+                          obo:IAO_0000115 "DAG based hierarchical classification task with single label paths and full depth labeling is a DAG based hierarchical classification task where the objective is to predict a set of labels organized in a DAG (represented with a output DAG with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have single paths of labels and all instances have full depth of labeling." ;
+                          rdfs:label "DAG based hierarchical classification task with single label paths and full depth labeling"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_622093
+OntoDM-core:OntoDM_622093 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_388961 ;
+                          ace_lexicon:CN_pl "OntoDM_622093s" ;
+                          ace_lexicon:CN_sg "OntoDM_622093" ;
+                          obo:IAO_0000115 "LCL tree-based hierarchical classification algorithm for multiple path and mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL tree based HC algorithm for multiple path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_622428
+OntoDM-core:OntoDM_622428 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_559103 ;
+                          ace_lexicon:CN_pl "OntoDM_622428s" ;
+                          ace_lexicon:CN_sg "OntoDM_622428" ;
+                          obo:IAO_0000115 "Tree based hierarchical classification task with single label paths and full depth labeling is a tree based hierarchical classification task where the objective is to predict a set of labels organized in a tree (represented with a output tree with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have single paths of labels and all instances have full depth of labeling." ;
+                          rdfs:label "tree-based hierarchical classification task with single label paths and full depth labeling"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_627978
+OntoDM-core:OntoDM_627978 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_067028 ;
+                          ace_lexicon:CN_pl "OntoDM_627978s" ;
+                          ace_lexicon:CN_sg "OntoDM_627978" ;
+                          obo:IAO_0000115 "Multi-target binary decision tree is a multi-target binary classification model and denotes predictive models that are built on data having a tuple of boolean (set of output features) on the output part, set of features (represented by a descriptive tuple of primitives) on the descriptive part, and is expressed in the language of decision trees." ;
+                          rdfs:label "multi-target binary decision tree" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_629944
+OntoDM-core:OntoDM_629944 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDT_10000000000 ;
+                          ace_lexicon:CN_pl "OntoDM_629944s" ;
+                          ace_lexicon:CN_sg "OntoDM_629944" ;
+                          obo:IAO_0000115 "labeled dataset with structured output is a dataset specification of a labeled dataset with structured output datatype specification." ;
+                          rdfs:label "completely labeled dataset with structured output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_636213
+OntoDM-core:OntoDM_636213 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_783954 ;
+                          ace_lexicon:CN_pl "OntoDM_636213s" ;
+                          ace_lexicon:CN_sg "OntoDM_636213" ;
+                          obo:IAO_0000115 "multi-target multi-class classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a tuple of discrete (specified with the feature set specification) on the output part of the data." ;
+                          rdfs:label "multi-target multi-class classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_636747
+OntoDM-core:OntoDM_636747 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_257039 ;
+                          ace_lexicon:CN_pl "OntoDM_636747s" ;
+                          ace_lexicon:CN_sg "OntoDM_636747" ;
+                          obo:IAO_0000115 "multi-class classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part, and a discrete datatype on the output part of the data (specified with the feature specification). " ;
+                          rdfs:label "multi-class classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_640624
+OntoDM-core:OntoDM_640624 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_107836 ;
+                          ace_lexicon:CN_pl "OntoDM_640624s" ;
+                          ace_lexicon:CN_sg "OntoDM_640624" ;
+                          obo:IAO_0000115 "Hierarchical classification decision tree  is a hierarchical classification model and denotes predictive models that are built on data having a labeled graph datatype on the output part, set of features (represented by a descriptive tuple of primitives) on the descriptive part, and it is expressed in the language of decision trees." ;
+                          rdfs:label "hierarchical classification decision tree" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_642324
+OntoDM-core:OntoDM_642324 rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontodm.com/clus/OntoDM_001024> ;
+                          ace_lexicon:CN_pl "OntoDM_642324s" ;
+                          ace_lexicon:CN_sg "OntoDM_642324" ;
+                          rdfs:label "language of decision trees" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_661861
+OntoDM-core:OntoDM_661861 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_600958 ;
+                          ace_lexicon:CN_pl "OntoDM_661861s" ;
+                          ace_lexicon:CN_sg "OntoDM_661861" ;
+                          obo:IAO_0000115 "structure based structured output prediction task is a predicting structured output task where the objective is to predict a structured output (represented with a outputstructured datatype) from a structure (represented by a descriptive structured datatype)." ;
+                          rdfs:label "supervised structure based structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_666475
+OntoDM-core:OntoDM_666475 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_629944 ;
+                          ace_lexicon:CN_pl "OntoDM_666475s" ;
+                          ace_lexicon:CN_sg "OntoDM_666475" ;
+                          obo:IAO_0000115 "labeled feature-based dataset with structured output is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a structured datatype on the output part of the data." ;
+                          rdfs:label "feature-based completely labeled dataset with structured output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_669483
+OntoDM-core:OntoDM_669483 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_793930 ;
+                          ace_lexicon:CN_pl "OntoDM_669483s" ;
+                          ace_lexicon:CN_sg "OntoDM_669483" ;
+                          obo:IAO_0000115 "LCL tree-based hierarchical classification algorithm for single path prediction is a data mining algorithm that solves a tree-based hierarchical classification task with single label paths and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL tree based HC algorithm for single path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_674255
+OntoDM-core:OntoDM_674255 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_817028 ;
+                          ace_lexicon:CN_pl "OntoDM_674255s" ;
+                          ace_lexicon:CN_sg "OntoDM_674255" ;
+                          obo:IAO_0000115 "Multi-target regression algorithm is a data mining algorithm that solves a multi-target regression task and as a result produces a multi-target regression model." ;
+                          rdfs:label "multi-target regression algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_686944
+OntoDM-core:OntoDM_686944 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_537602 ;
+                          ace_lexicon:CN_pl "OntoDM_686944s" ;
+                          ace_lexicon:CN_sg "OntoDM_686944" ;
+                          obo:IAO_0000115 "regression dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a real datatype on the output part of the data (specified with the output specification). " ;
+                          rdfs:label "regression dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_688833
+OntoDM-core:OntoDM_688833 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_207566 ;
+                          ace_lexicon:CN_pl "OntoDM_688833s" ;
+                          ace_lexicon:CN_sg "OntoDM_688833" ;
+                          obo:IAO_0000115 "A regression model is a feature-based predictive model for primitive output and denotes predictive models that are built on data having a real datatype on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "regression model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_689658
+OntoDM-core:OntoDM_689658 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_481568 ;
+                          ace_lexicon:CN_pl "OntoDM_689658s" ;
+                          ace_lexicon:CN_sg "OntoDM_689658" ;
+                          obo:IAO_0000115 "Multi-target multi-class decision tree is a multi-target multi-class classification model and denotes predictive models that are built on data having a tuple of discrete (set of output features) on the output part, set of features (represented by a descriptive tuple of primitives) on the descriptive part, and are expressed in the language of decision trees." ;
+                          rdfs:label "multi-target multi-class decison tree" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_692551
+OntoDM-core:OntoDM_692551 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_838789 ;
+                          ace_lexicon:CN_pl "OntoDM_692551s" ;
+                          ace_lexicon:CN_sg "OntoDM_692551" ;
+                          obo:IAO_0000115 "LCL DAG-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL DAG based HC algorithm for single path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_692808
+OntoDM-core:OntoDM_692808 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_629944 ;
+                          ace_lexicon:CN_pl "OntoDM_692808s" ;
+                          ace_lexicon:CN_sg "OntoDM_692808" ;
+                          obo:IAO_0000115 "labeled dataset with structured output is a dataset specification of a labeled dataset with structured datatype on the descriptive part and a structured datatype on the output part of the data." ;
+                          rdfs:label "structure-based completely labeled dataset with structured output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_694510
+OntoDM-core:OntoDM_694510 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_398436 ;
+                          ace_lexicon:CN_pl "OntoDM_694510s" ;
+                          ace_lexicon:CN_sg "OntoDM_694510" ;
+                          obo:IAO_0000115 "GC tree-based hierarchical classification algorithm for multiple path prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and as a result produces a hierarchical classification model using a global classifier (GC) approach." ;
+                          rdfs:label "GC tree-based HC algorithm for multiple path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_718392
+OntoDM-core:OntoDM_718392 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_372340 ;
+                          ace_lexicon:CN_pl "OntoDM_718392s" ;
+                          ace_lexicon:CN_sg "OntoDM_718392" ;
+                          obo:IAO_0000115 "DAG based hierarchical classification task with multiple label paths and partial depth labeling is a DAG based hierarchical classification task where the objective is to predict a set of labels organized in a DAG (represented with a output DAG with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have multiple paths of labels and at least one instance has a partial depth of labeling." ;
+                          rdfs:label "DAG based hierarchical classification task with multiple label paths and partial depth labeling"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_718446
+OntoDM-core:OntoDM_718446 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_382943 ;
+                          ace_lexicon:CN_pl "OntoDM_718446s" ;
+                          ace_lexicon:CN_sg "OntoDM_718446" ;
+                          obo:IAO_0000115 "Structure-based predictive modeling algorithm for primitive output is a data mining algorithm that solves a structure-based primitive output prediction task and as a result produces a structure-based predictive model for primitive output." ;
+                          rdfs:label "structure-based prectictive modeling algorithm for primitive output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_721008
+OntoDM-core:OntoDM_721008 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_368779 ;
+                          ace_lexicon:CN_pl "OntoDM_721008s" ;
+                          ace_lexicon:CN_sg "OntoDM_721008" ;
+                          rdfs:label "Random Forest" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_722523
+OntoDM-core:OntoDM_722523 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_817028 ;
+                          ace_lexicon:CN_pl "OntoDM_722523s" ;
+                          ace_lexicon:CN_sg "OntoDM_722523" ;
+                          obo:IAO_0000115 "Multi-target classification algorithm is a data mining algorithm that solves a multi-target classification task and as a result produces a multi-target classification model." ;
+                          rdfs:label "multi-target classification algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_727807
+OntoDM-core:OntoDM_727807 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_783954 ;
+                          ace_lexicon:CN_pl "OntoDM_727807s" ;
+                          ace_lexicon:CN_sg "OntoDM_727807" ;
+                          obo:IAO_0000115 "multi-target  binary classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a tuple of booleans  (specified with the feature set specification) on the output part of the data." ;
+                          rdfs:label "multi-target binary classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_728533
+OntoDM-core:OntoDM_728533 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_722523 ;
+                          ace_lexicon:CN_pl "OntoDM_728533s" ;
+                          ace_lexicon:CN_sg "OntoDM_728533" ;
+                          obo:IAO_0000115 "Multi-target binary classification algorithm is a data mining algorithm that solves a multi-target binary classification task and as a result produces a  multi-target binarty classification model." ;
+                          rdfs:label "multi-target binary classification algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_730046
+OntoDM-core:OntoDM_730046 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_081165 ;
+                          ace_lexicon:CN_pl "OntoDM_730046s" ;
+                          ace_lexicon:CN_sg "OntoDM_730046" ;
+                          obo:IAO_0000115 "LCN tree-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN tree based HC algorithm for multiple path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_731692
+OntoDM-core:OntoDM_731692 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000038 ;
+                          ace_lexicon:CN_pl "OntoDM_731692s" ;
+                          ace_lexicon:CN_sg "OntoDM_731692" ;
+                          obo:IAO_0000115 "A single generalization algorithm is a data mining algorithm that solves a data mining task and as a result produces a single generalization." ;
+                          rdfs:label "single generalization algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_733255
+OntoDM-core:OntoDM_733255 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_114697 ;
+                          ace_lexicon:CN_pl "OntoDM_733255s" ;
+                          ace_lexicon:CN_sg "OntoDM_733255" ;
+                          obo:IAO_0000115 "Multi-target classification task is a multi-target prediction task where the objective is to predict a set of binary/discrete features (represented with a output tuple of booleans or discrete) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised multi-target classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_746568
+OntoDM-core:OntoDM_746568 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_666475 ;
+                          ace_lexicon:CN_pl "OntoDM_746568s" ;
+                          ace_lexicon:CN_sg "OntoDM_746568" ;
+                          obo:IAO_0000115 "multi-target prediction dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a tuple of primitives (specified with the feature set specification) on the output part of the data." ;
+                          rdfs:label "multi-target prediction dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_754841
+OntoDM-core:OntoDM_754841 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_694510 ;
+                          ace_lexicon:CN_pl "OntoDM_754841s" ;
+                          ace_lexicon:CN_sg "OntoDM_754841" ;
+                          rdfs:label "GC tree based HC algorithm for multiple path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_757640
+OntoDM-core:OntoDM_757640 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_722523 ;
+                          ace_lexicon:CN_pl "OntoDM_757640s" ;
+                          ace_lexicon:CN_sg "OntoDM_757640" ;
+                          obo:IAO_0000115 "Multi-target multi-class classification algorithm is a data mining algorithm that solves a multi-target multi-class classification task and as a result produces a multi-target multi-class classification model." ;
+                          rdfs:label "multi-target multi-class classification algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_771971
+OntoDM-core:OntoDM_771971 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_694510 ;
+                          ace_lexicon:CN_pl "OntoDM_771971s" ;
+                          ace_lexicon:CN_sg "OntoDM_771971" ;
+                          rdfs:label "GC tree based HC algorithm for multiple path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_782155
+OntoDM-core:OntoDM_782155 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_180345 ;
+                          ace_lexicon:CN_pl "OntoDM_782155s" ;
+                          ace_lexicon:CN_sg "OntoDM_782155" ;
+                          obo:IAO_0000115 "LCN DAG-based hierarchical classification algorithm for multiple path and mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN DAG based HC algorithm for multiple path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_783954
+OntoDM-core:OntoDM_783954 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_746568 ;
+                          ace_lexicon:CN_pl "OntoDM_783954s" ;
+                          ace_lexicon:CN_sg "OntoDM_783954" ;
+                          obo:IAO_0000115 "multi-target classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a tuple of booleans or discrete (specified with the feature set specification) on the output part of the data." ;
+                          rdfs:label "multi-target classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_785336
+OntoDM-core:OntoDM_785336 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_242219 ;
+                          ace_lexicon:CN_pl "OntoDM_785336s" ;
+                          ace_lexicon:CN_sg "OntoDM_785336" ;
+                          obo:IAO_0000115 "Structure-based primitive output prediction task is a predicting primitive output task where the objective is to predict a primitive output (represented with a primitive datatype) from a structure (represented by a descriptive structured datatype)." ;
+                          rdfs:label "supervised structure based primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_793930
+OntoDM-core:OntoDM_793930 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_540049 ;
+                          ace_lexicon:CN_pl "OntoDM_793930s" ;
+                          ace_lexicon:CN_sg "OntoDM_793930" ;
+                          obo:IAO_0000115 "LCL tree-based hierarchical classification algorithm is a data mining algorithm that solves a tree-based hierarchical classification task and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL tree based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_794067
+OntoDM-core:OntoDM_794067 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_666475 ;
+                          ace_lexicon:CN_pl "OntoDM_794067s" ;
+                          ace_lexicon:CN_sg "OntoDM_794067" ;
+                          obo:IAO_0000115 "feature-based time series predicton dataset  is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a sequence of reals datatype on the output part of the data." ;
+                          rdfs:label "feature-based time-series prediction dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_813772
+OntoDM-core:OntoDM_813772 rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontodm.com/clus/OntoDM_001024> ;
+                          ace_lexicon:CN_pl "OntoDM_813772s" ;
+                          ace_lexicon:CN_sg "OntoDM_813772" ;
+                          rdfs:label "language of bayesian nets" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_815320
+OntoDM-core:OntoDM_815320 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_733255 ;
+                          ace_lexicon:CN_pl "OntoDM_815320s" ;
+                          ace_lexicon:CN_sg "OntoDM_815320" ;
+                          obo:IAO_0000115 "Multi-target multi-class classification task is a multi-target classification task where the objective is to predict a set of discrete features (represented with a output tuple of discrete ) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised multi-target multi-class classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_817028
+OntoDM-core:OntoDM_817028 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_831808 ;
+                          ace_lexicon:CN_pl "OntoDM_817028s" ;
+                          ace_lexicon:CN_sg "OntoDM_817028" ;
+                          obo:IAO_0000115 "Multi-target predictive modeling algorithm is a data mining algorithm that solves a multi-target prediction task and as a result produces a multi-target predictive model." ;
+                          rdfs:label "multi-target predictive modelling algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_818411
+OntoDM-core:OntoDM_818411 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_135761 ;
+                          ace_lexicon:CN_pl "OntoDM_818411s" ;
+                          ace_lexicon:CN_sg "OntoDM_818411" ;
+                          rdfs:label "GC DAG based HC algorithm for single path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_826903
+OntoDM-core:OntoDM_826903 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_542264 ;
+                          ace_lexicon:CN_pl "OntoDM_826903s" ;
+                          ace_lexicon:CN_sg "OntoDM_826903" ;
+                          obo:IAO_0000115 "Tree based hierarchical classification task with multiple label paths is a tree based hierarchical classification task where the objective is to predict a set of labels organized in a tree (represented with a output tree with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have multiple paths of labels." ;
+                          rdfs:label "tree-based hierarchical classification task with multiple label paths"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_829270
+OntoDM-core:OntoDM_829270 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_613675 ;
+                          ace_lexicon:CN_pl "OntoDM_829270s" ;
+                          ace_lexicon:CN_sg "OntoDM_829270" ;
+                          obo:IAO_0000115 "LCPN DAG-based hierarchical classification algorithm for multiple path and non-mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and partial depth labeling and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LCPN DAG based HC algorithm for single path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_831808
+OntoDM-core:OntoDM_831808 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_871327 ;
+                          ace_lexicon:CN_pl "OntoDM_831808s" ;
+                          ace_lexicon:CN_sg "OntoDM_831808" ;
+                          obo:IAO_0000115 "Feature-based predictive modeling algorithm for structured output is a data mining algorithm that solves a feature-based primitive  structured  prediction task and as a result produces a feature-based predictive model for  structured  output." ;
+                          rdfs:label "feature-based predictive modeling algorithm for structured output " .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_837886
+OntoDM-core:OntoDM_837886 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_205203 ;
+                          ace_lexicon:CN_pl "OntoDM_837886s" ;
+                          ace_lexicon:CN_sg "OntoDM_837886" ;
+                          obo:IAO_0000115 "regression classification task is a feature-based primitive output task where the objective is to predict a real output (represented with a real datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised regression task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_838789
+OntoDM-core:OntoDM_838789 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_071450 ;
+                          ace_lexicon:CN_pl "OntoDM_838789s" ;
+                          ace_lexicon:CN_sg "OntoDM_838789" ;
+                          obo:IAO_0000115 "LCL DAG-based hierarchical classification algorithm for single path prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with single label paths and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL DAG based HC algorithm for single path prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_843203
+OntoDM-core:OntoDM_843203 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_849533 ;
+                          ace_lexicon:CN_pl "OntoDM_843203s" ;
+                          ace_lexicon:CN_sg "OntoDM_843203" ;
+                          obo:IAO_0000115 "labeled structure-based dataset with primitive output is a dataset specification of a labeled dataset with a structure datatype on the descriptive part and a primitive datatype on the output part of the data (specified with the output feature specification). " ;
+                          rdfs:label "structure-based completely labeled dataset with primitive output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_849533
+OntoDM-core:OntoDM_849533 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDT_10000000000 ;
+                          ace_lexicon:CN_pl "OntoDM_849533s" ;
+                          ace_lexicon:CN_sg "OntoDM_849533" ;
+                          obo:IAO_0000115 "labeled dataset with primitive output is a dataset specification of labeled dataset with primitive output datatype specification." ;
+                          rdfs:label "completely labeled dataset with primitive output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_849657
+OntoDM-core:OntoDM_849657 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_135761 ;
+                          ace_lexicon:CN_pl "OntoDM_849657s" ;
+                          ace_lexicon:CN_sg "OntoDM_849657" ;
+                          rdfs:label "GC DAG based HC algorithm for single path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_860584
+OntoDM-core:OntoDM_860584 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_530819 ;
+                          ace_lexicon:CN_pl "OntoDM_860584s" ;
+                          ace_lexicon:CN_sg "OntoDM_860584" ;
+                          obo:IAO_0000115 "Pattern discovery ensemble algorithm is a data mining algorithm that solves a pattern discovery task and as a result produces a ensemble of set of patterns." ;
+                          rdfs:label "pattern discovery ensemble algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_865023
+OntoDM-core:OntoDM_865023 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_112772 ;
+                          ace_lexicon:CN_pl "OntoDM_865023s" ;
+                          ace_lexicon:CN_sg "OntoDM_865023" ;
+                          obo:IAO_0000115 "A multi-class classification model is a classification model  and denotes predictive models that are built on data having a discrete datatype on the output part, and set of features (represented by a descriptive tuple of primitives) on the descriptive part." ;
+                          rdfs:label "multi-class classification model" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_871327
+OntoDM-core:OntoDM_871327 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000160 ;
+                          ace_lexicon:CN_pl "OntoDM_871327s" ;
+                          ace_lexicon:CN_sg "OntoDM_871327" ;
+                          obo:IAO_0000115 "Predictive modeling algorithm for structured output is a data mining algorithm that solves a predicting structured output task and as a result produces a predictive model for structured output." ;
+                          rdfs:label "predictive modeling algorithm for structured output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_874928
+OntoDM-core:OntoDM_874928 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_104594 ;
+                          ace_lexicon:CN_pl "OntoDM_874928s" ;
+                          ace_lexicon:CN_sg "OntoDM_874928" ;
+                          obo:IAO_0000115 "LCN DAG-based hierarchical classification algorithm for single path and mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with single label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN DAG based HC algorithm for single path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_879928
+OntoDM-core:OntoDM_879928 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_000031 ;
+                          ace_lexicon:CN_pl "OntoDM_879928s" ;
+                          ace_lexicon:CN_sg "OntoDM_879928" ;
+                          obo:IAO_0000115 "unlabeled dataset is a dataset specification for datasets that have only descriptive datatype specification of the data examples contained in the dataset." ;
+                          rdfs:label "unlabeled dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_882801
+OntoDM-core:OntoDM_882801 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_232231 ;
+                          ace_lexicon:CN_pl "OntoDM_882801s" ;
+                          ace_lexicon:CN_sg "OntoDM_882801" ;
+                          obo:IAO_0000115 "LCPN DAG-based hierarchical classification algorithm for multiple path and mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LCPN DAG based HC algorithm for multiple path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_900172
+OntoDM-core:OntoDM_900172 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_485256 ;
+                          ace_lexicon:CN_pl "OntoDM_900172s" ;
+                          ace_lexicon:CN_sg "OntoDM_900172" ;
+                          rdfs:label "GC DAG based HC algorithm for multiple path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_901970
+OntoDM-core:OntoDM_901970 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_081165 ;
+                          ace_lexicon:CN_pl "OntoDM_901970s" ;
+                          ace_lexicon:CN_sg "OntoDM_901970" ;
+                          obo:IAO_0000115 "LCN tree-based hierarchical classification algorithm for multiple path and mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per node (LCN) approach." ;
+                          rdfs:label "LCN tree based HC algorithm for multiple path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_910828
+OntoDM-core:OntoDM_910828 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_368779 ;
+                          ace_lexicon:CN_pl "OntoDM_910828s" ;
+                          ace_lexicon:CN_sg "OntoDM_910828" ;
+                          rdfs:label "Boosting" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_913132
+OntoDM-core:OntoDM_913132 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_387728 ;
+                          ace_lexicon:CN_pl "OntoDM_913132s" ;
+                          ace_lexicon:CN_sg "OntoDM_913132" ;
+                          obo:IAO_0000115 "multi class classification task is a flat classification task where the objective is to predict a  discrete output (represented with a boolean or discrete datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised multi-class classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_919659
+OntoDM-core:OntoDM_919659 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_174112 ;
+                          ace_lexicon:CN_pl "OntoDM_919659s" ;
+                          ace_lexicon:CN_sg "OntoDM_919659" ;
+                          obo:IAO_0000115 "LCPN tree-based hierarchical classification algorithm for multiple path and mandatory leaf node prediction is a data mining algorithm that solves a tree-based hierarchical classification task with multiple label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per parent node (LCPN) approach." ;
+                          rdfs:label "LPCN tree based HC algorithm for multiple path and non-mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_930862
+OntoDM-core:OntoDM_930862 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_826903 ;
+                          ace_lexicon:CN_pl "OntoDM_930862s" ;
+                          ace_lexicon:CN_sg "OntoDM_930862" ;
+                          obo:IAO_0000115 "Tree based hierarchical classification task with multiple label paths and partial depth labeling is a tree based hierarchical classification task where the objective is to predict a set of labels organized in a tree (represented with a output tree with boolean edges and discrete nodes) from a set of features (represented by a descriptive tuple of primitives datatype), where the data instances are allowed to have multiple paths of labels and at least one instance has a partial depth of labeling." ;
+                          rdfs:label "tree-based hierarchical classification task with multiple label paths and partial depth labeling"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_931732
+OntoDM-core:OntoDM_931732 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_354620 ;
+                          ace_lexicon:CN_pl "OntoDM_931732s" ;
+                          ace_lexicon:CN_sg "OntoDM_931732" ;
+                          obo:IAO_0000115 "Hierarchical classification task is a feature-based structured output prediction task where the objective is to predict a hierarchical output (represented with a output labeled graph datatype) from a set of features (represented by a descriptive tuple of primitives datatype)." ;
+                          rdfs:label "supervised hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_941793
+OntoDM-core:OntoDM_941793 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_382943 ;
+                          ace_lexicon:CN_pl "OntoDM_941793s" ;
+                          ace_lexicon:CN_sg "OntoDM_941793" ;
+                          obo:IAO_0000115 "Feature-based predictive modeling algorithm for primitive output is a data mining algorithm that solves a feature-based primitive output prediction task and as a result produces a feature-based predictive model for primitive output." ;
+                          rdfs:label "feature-based predictive modeling algorithm for primitive output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_942569
+OntoDM-core:OntoDM_942569 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_003932 ;
+                          ace_lexicon:CN_pl "OntoDM_942569s" ;
+                          ace_lexicon:CN_sg "OntoDM_942569" ;
+                          obo:IAO_0000115 "A structure-based predictive model for primitive output is a predictive model specification and denotes predictive models that are built on data having primitive datatype on the output part, and a structured datatype on the descriptive part." ;
+                          rdfs:label "structure-based predictive model for primitive output" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_942737
+OntoDM-core:OntoDM_942737 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_311225 ;
+                          ace_lexicon:CN_pl "OntoDM_942737s" ;
+                          ace_lexicon:CN_sg "OntoDM_942737" ;
+                          obo:IAO_0000115 "LC DAG-based hierarchical classification algorithm is a data mining algorithm that solves a DAG-based hierarchical classification task and as a result produces a hierarchical classification model using a local classifier (LC) approach." ;
+                          rdfs:label "LC DAG based HC algorithm" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_960431
+OntoDM-core:OntoDM_960431 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_666475 ;
+                          ace_lexicon:CN_pl "OntoDM_960431s" ;
+                          ace_lexicon:CN_sg "OntoDM_960431" ;
+                          obo:IAO_0000115 "hierarchical classification dataset is a dataset specification of a labeled dataset with tuple of primitives datatype (specified with the feature set specification) on the descriptive part and a labeled graph datatype on the output part of the data." ;
+                          rdfs:label "hierarchical classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_970232
+OntoDM-core:OntoDM_970232 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_368779 ;
+                          ace_lexicon:CN_pl "OntoDM_970232s" ;
+                          ace_lexicon:CN_sg "OntoDM_970232" ;
+                          rdfs:label "Stacking" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDM_975727
+OntoDM-core:OntoDM_975727 rdf:type owl:Class ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_319168 ;
+                          ace_lexicon:CN_pl "OntoDM_975727s" ;
+                          ace_lexicon:CN_sg "OntoDM_975727" ;
+                          obo:IAO_0000115 "LCL DAG-based hierarchical classification algorithm for multiple path and mandatory leaf node prediction is a data mining algorithm that solves a DAG-based hierarchical classification task with multiple label paths and full depth labeling and as a result produces a hierarchical classification model using a local classifier per level (LCL) approach." ;
+                          rdfs:label "LCL DAG based HC algorithm for multiple path and mandatory leaf node prediction" .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000000
+OntoDM-core:OntoDT_10000000000 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDM_372936 ;
+                               rdfs:label "completely labeled dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000001
+OntoDM-core:OntoDT_10000000001 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDM_372936 ;
+                               rdfs:label "semi-labeled dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000002
+OntoDM-core:OntoDT_10000000002 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDM_372936 ;
+                               rdfs:label "partially labeled dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000003
+OntoDM-core:OntoDT_10000000003 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000026 ;
+                               rdfs:label "supervised predictive modelling task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000004
+OntoDM-core:OntoDT_10000000004 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000026 ;
+                               rdfs:label "semi-supervised predictive modelling task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000005
+OntoDM-core:OntoDT_10000000005 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000004 ;
+                               rdfs:label "semi-supervised structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000006
+OntoDM-core:OntoDT_10000000006 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000005 ;
+                               rdfs:label "semi-supervised feature-based structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000007
+OntoDM-core:OntoDT_10000000007 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000006 ;
+                               rdfs:label "semi-supervised hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000008
+OntoDM-core:OntoDT_10000000008 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000007 ;
+                               rdfs:label "semi-supervised DAG based hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000009
+OntoDM-core:OntoDT_10000000009 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000007 ;
+                               rdfs:label "semi-supervised tree-based hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000010
+OntoDM-core:OntoDT_10000000010 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000006 ;
+                               rdfs:label "semi-supervised multi-label classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000011
+OntoDM-core:OntoDT_10000000011 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000006 ;
+                               rdfs:label "semi-supervised multi-target prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000012
+OntoDM-core:OntoDT_10000000012 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000011 ;
+                               rdfs:label "semi-supervised multi-target classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000013
+OntoDM-core:OntoDT_10000000013 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000012 ;
+                               rdfs:label "semi-supervised multi-target binary classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000014
+OntoDM-core:OntoDT_10000000014 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000012 ;
+                               rdfs:label "semi-supervised multi-target multi-class classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000015
+OntoDM-core:OntoDT_10000000015 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000011 ;
+                               rdfs:label "semi-supervised multi-target regression task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000016
+OntoDM-core:OntoDT_10000000016 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000006 ;
+                               rdfs:label "semi-supervised time-series prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000017
+OntoDM-core:OntoDT_10000000017 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000005 ;
+                               rdfs:label "semi-supervised structure-based structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000018
+OntoDM-core:OntoDT_10000000018 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000004 ;
+                               rdfs:label "semi-supervised primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000019
+OntoDM-core:OntoDT_10000000019 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000018 ;
+                               rdfs:label "semi-supervised feature-based primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000020
+OntoDM-core:OntoDT_10000000020 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000019 ;
+                               rdfs:label "semi-supervised flat classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000021
+OntoDM-core:OntoDT_10000000021 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000020 ;
+                               rdfs:label "semi-supervised binary classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000022
+OntoDM-core:OntoDT_10000000022 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000020 ;
+                               rdfs:label "semi-supervised multi-class classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000023
+OntoDM-core:OntoDT_10000000023 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000019 ;
+                               rdfs:label "semi-supervised regression task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000024
+OntoDM-core:OntoDT_10000000024 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000018 ;
+                               rdfs:label "semi-supervised structure-based primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000025
+OntoDM-core:OntoDT_10000000025 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDM_400002 ;
+                               rdfs:label "online predictive modeling task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000026
+OntoDM-core:OntoDT_10000000026 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDM_400001 ;
+                               rdfs:label "batch predictive modeling task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000027
+OntoDM-core:OntoDT_10000000027 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000025 ;
+                               rdfs:label "online supervised predictive modeling task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000028
+OntoDM-core:OntoDT_10000000028 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000025 ;
+                               rdfs:label "online semi-supervised predictive modeling task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000029
+OntoDM-core:OntoDT_10000000029 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000028 ;
+                               rdfs:label "online semi-supervised structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000030
+OntoDM-core:OntoDT_10000000030 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000029 ;
+                               rdfs:label "online semi-supervised feature-based structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000031
+OntoDM-core:OntoDT_10000000031 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000030 ;
+                               rdfs:label "online semi-supervised hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000032
+OntoDM-core:OntoDT_10000000032 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000031 ;
+                               rdfs:label "online semi-supervised DAG based hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000033
+OntoDM-core:OntoDT_10000000033 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000031 ;
+                               rdfs:label "online semi-supervised tree based hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000034
+OntoDM-core:OntoDT_10000000034 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000030 ;
+                               rdfs:label "online semi-supervised multi-label classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000035
+OntoDM-core:OntoDT_10000000035 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000030 ;
+                               rdfs:label "online semi-supervised multi-target prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000036
+OntoDM-core:OntoDT_10000000036 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000035 ;
+                               rdfs:label "online semi-supervised multi-target classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000037
+OntoDM-core:OntoDT_10000000037 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000036 ;
+                               rdfs:label "online semi-supervised multi-target binary classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000038
+OntoDM-core:OntoDT_10000000038 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000036 ;
+                               rdfs:label "online semi-supervised multi-target multi-class classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000039
+OntoDM-core:OntoDT_10000000039 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000035 ;
+                               rdfs:label "online semi-supervised multi-target regression task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000040
+OntoDM-core:OntoDT_10000000040 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000030 ;
+                               rdfs:label "online semi-supervised time-series prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000041
+OntoDM-core:OntoDT_10000000041 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000029 ;
+                               rdfs:label "online semi-supervised structure-based structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000042
+OntoDM-core:OntoDT_10000000042 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000028 ;
+                               rdfs:label "online semi-supervised primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000043
+OntoDM-core:OntoDT_10000000043 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000042 ;
+                               rdfs:label "online semi-supervised feature-based primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000044
+OntoDM-core:OntoDT_10000000044 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000043 ;
+                               rdfs:label "online semi-supervised flat classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000045
+OntoDM-core:OntoDT_10000000045 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000044 ;
+                               rdfs:label "online semi-supervised binary classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000046
+OntoDM-core:OntoDT_10000000046 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000044 ;
+                               rdfs:label "online semi-supervised multi-class classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000047
+OntoDM-core:OntoDT_10000000047 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000043 ;
+                               rdfs:label "online semi-supervised regression task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000048
+OntoDM-core:OntoDT_10000000048 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000042 ;
+                               rdfs:label "online semi-supervised structure-based primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000049
+OntoDM-core:OntoDT_10000000049 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000027 ;
+                               rdfs:label "online supervised structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000050
+OntoDM-core:OntoDT_10000000050 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000049 ;
+                               rdfs:label "online supervised feature-based structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000051
+OntoDM-core:OntoDT_10000000051 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000050 ;
+                               rdfs:label "online supervised hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000052
+OntoDM-core:OntoDT_10000000052 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000051 ;
+                               rdfs:label "online supervised DAG based hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000053
+OntoDM-core:OntoDT_10000000053 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000051 ;
+                               rdfs:label "online supervised tree-based hierarchical classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000054
+OntoDM-core:OntoDT_10000000054 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000050 ;
+                               rdfs:label "online supervised multi-label classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000055
+OntoDM-core:OntoDT_10000000055 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000050 ;
+                               rdfs:label "online supervised multi-target prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000056
+OntoDM-core:OntoDT_10000000056 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000055 ;
+                               rdfs:label "online supervised multi-target classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000057
+OntoDM-core:OntoDT_10000000057 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000056 ;
+                               rdfs:label "online supervised multi-target binary classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000058
+OntoDM-core:OntoDT_10000000058 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000056 ;
+                               rdfs:label "online supervised multi-target multi-class classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000059
+OntoDM-core:OntoDT_10000000059 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000055 ;
+                               rdfs:label "online supervised multi-target regression task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000060
+OntoDM-core:OntoDT_10000000060 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000050 ;
+                               rdfs:label "online supervised time-series prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000061
+OntoDM-core:OntoDT_10000000061 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000049 ;
+                               rdfs:label "online supervised structure-based structured output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000062
+OntoDM-core:OntoDT_10000000062 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000027 ;
+                               rdfs:label "online supervised primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000063
+OntoDM-core:OntoDT_10000000063 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000062 ;
+                               rdfs:label "online supervised feature-based primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000064
+OntoDM-core:OntoDT_10000000064 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000063 ;
+                               rdfs:label "online supervised flat classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000065
+OntoDM-core:OntoDT_10000000065 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000064 ;
+                               rdfs:label "online supervised binary classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000066
+OntoDM-core:OntoDT_10000000066 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000064 ;
+                               rdfs:label "online supervised multi-class classification task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000067
+OntoDM-core:OntoDT_10000000067 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000063 ;
+                               rdfs:label "online supervised regression task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000068
+OntoDM-core:OntoDT_10000000068 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000062 ;
+                               rdfs:label "online supervised structure-based primitive output prediction task"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000075
+OntoDM-core:OntoDT_10000000075 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000001 ;
+                               rdfs:label "semi-labeled dataset with structured output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000076
+OntoDM-core:OntoDT_10000000076 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000075 ;
+                               rdfs:label "feature-based semi-labeled dataset with structured output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000077
+OntoDM-core:OntoDT_10000000077 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000076 ;
+                               rdfs:label "feature-based time-series semi-labeled prediction dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000078
+OntoDM-core:OntoDT_10000000078 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000076 ;
+                               rdfs:label "hierarchical semi-labeled classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000079
+OntoDM-core:OntoDT_10000000079 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000078 ;
+                               rdfs:label "DAG-based hierarchical semi-labeled classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000080
+OntoDM-core:OntoDT_10000000080 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000078 ;
+                               rdfs:label "tree-based hierarchical semi-labeled classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000081
+OntoDM-core:OntoDT_10000000081 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000076 ;
+                               rdfs:label "multi-label semi-labeled classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000082
+OntoDM-core:OntoDT_10000000082 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000076 ;
+                               rdfs:label "multi-target semi-labeled prediction dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000083
+OntoDM-core:OntoDT_10000000083 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000114 ;
+                               rdfs:label "multi-target semi-labeled binary classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000084
+OntoDM-core:OntoDT_10000000084 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000114 ;
+                               rdfs:label "multi-target semi-labeled multi-class classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000085
+OntoDM-core:OntoDT_10000000085 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000082 ;
+                               rdfs:label "multi-target semi-labeled regression dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000086
+OntoDM-core:OntoDT_10000000086 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000075 ;
+                               rdfs:label "structure-based semi-labeled dataset with structured output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000087
+OntoDM-core:OntoDT_10000000087 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000001 ;
+                               rdfs:label "semi-labeled dataset with primitive output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000088
+OntoDM-core:OntoDT_10000000088 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000087 ;
+                               rdfs:label "feature-based semi-labeled dataset with primitive output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000089
+OntoDM-core:OntoDT_10000000089 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000088 ;
+                               rdfs:label "flat semi-labeled classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000090
+OntoDM-core:OntoDT_10000000090 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000089 ;
+                               rdfs:label "binary semi-labeled classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000091
+OntoDM-core:OntoDT_10000000091 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000089 ;
+                               rdfs:label "multi-class semi-labeled classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000092
+OntoDM-core:OntoDT_10000000092 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000088 ;
+                               rdfs:label "semi-labeled regression dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000093
+OntoDM-core:OntoDT_10000000093 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000087 ;
+                               rdfs:label "structure-based semi-labeled dataset with primitive output"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/OntoDT_10000000114
+OntoDM-core:OntoDT_10000000114 rdf:type owl:Class ;
+                               rdfs:subClassOf OntoDM-core:OntoDT_10000000082 ;
+                               rdfs:label "multi-target semi-labeled classification dataset"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000001
+:OWLClass_0000000001 rdf:type owl:Class ;
+                     rdfs:comment "" ;
+                     rdfs:label "optimization problem specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000025
+:OWLClass_0000000025 rdf:type owl:Class ;
+                     rdfs:label "algorithm assumption specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000026
+:OWLClass_0000000026 rdf:type owl:Class ;
+                     :OWLAnnotationProperty_0000000084 "" ;
+                     rdfs:label "complexity function specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000027
+:OWLClass_0000000027 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(1)" ;
+                     rdfs:comment """Finding the median value in a sorted array of numbers
+Calculating (−1)^n""" ;
+                     rdfs:label "constant time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000028
+:OWLClass_0000000028 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(n^3)" ;
+                     rdfs:comment "Naive multiplication of two n x n matrices. Calculating partial correlation." ;
+                     rdfs:label "cubic time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000029
+:OWLClass_0000000029 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "2^(2^poly(n))" ;
+                     rdfs:comment "Deciding the truth of a given statement in Presburger arithmetic" ;
+                     rdfs:label "double exponential time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000030
+:OWLClass_0000000030 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "2^(O(n))" ;
+                     rdfs:comment "Solving matrix chain multiplication via brute-force search" ;
+                     rdfs:label "exponential time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000031
+:OWLClass_0000000031 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(n!)" ;
+                     rdfs:comment "Solving the traveling salesman problem via brute-force search" ;
+                     rdfs:label "factorial time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000032
+:OWLClass_0000000032 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(n^c) where 0 < c < 1" ;
+                     rdfs:comment "Searching in a kd-tree" ;
+                     rdfs:label "fractional power"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000033
+:OWLClass_0000000033 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(alpha(n))" ;
+                     rdfs:comment "Amortized time per operation using a disjoint set" ;
+                     rdfs:label "inverse Ackermann time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000034
+:OWLClass_0000000034 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(log* n)" ;
+                     rdfs:comment "Distributed coloring of cycles" ;
+                     rdfs:label "iterated logarithmic time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000035
+:OWLClass_0000000035 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(n)" ;
+                     rdfs:comment "Finding the smallest or largest item in an unsorted array, Kadane's algorithm, linear search" ;
+                     rdfs:label "linear time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000036
+:OWLClass_0000000036 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(n log n)" ;
+                     rdfs:comment "Fastest possible comparison sort; Fast Fourier transform" ;
+                     rdfs:label "linearithmic time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000037
+:OWLClass_0000000037 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(log log n)" ;
+                     rdfs:comment "Amortized time per operation using a bounded priority queue" ;
+                     rdfs:label "log-logarithmic time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000038
+:OWLClass_0000000038 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(log n)" ;
+                     rdfs:comment "Binary search" ;
+                     rdfs:label "logarithmic time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000039
+:OWLClass_0000000039 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(n log* n)" ;
+                     rdfs:comment "Seidel's polygon triangulation algorithm" ;
+                     rdfs:label "n log-star n time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000040
+:OWLClass_0000000040 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "poly(log n)" ;
+                     rdfs:label "polylogarithmic time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000041
+:OWLClass_0000000041 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "poly(n) = 2^(O(log n))" ;
+                     rdfs:comment "Karmarkar's algorithm for linear programming; AKS primality test" ;
+                     rdfs:label "polynomial time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000042
+:OWLClass_0000000042 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "O(n^2)" ;
+                     rdfs:comment "Bubble sort; Insertion sort; Direct convolution" ;
+                     rdfs:label "quadratic time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000043
+:OWLClass_0000000043 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "2^(poly(log n))" ;
+                     rdfs:comment "Best-known O(log2n)-approximation algorithm for the directed Steiner tree problem" ;
+                     rdfs:label "quasi-polynomial time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000044
+:OWLClass_0000000044 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "n poly(log n)" ;
+                     rdfs:label "quasilinear time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000045
+:OWLClass_0000000045 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "2^(o(n))" ,
+                                                       "O(2^(n^e)) for all e > 0" ;
+                     rdfs:comment "Contains BPP unless EXPTIME (see below) equals MA. Best-known algorithm for integer factorization; formerly-best algorithm for graph isomorphism" ;
+                     rdfs:label "sub-exponential time"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000046
+:OWLClass_0000000046 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000026 ;
+                     :OWLAnnotationProperty_0000000084 "2^(O(n))" ;
+                     rdfs:comment "Solving the traveling salesman problem using dynamic programming" ;
+                     rdfs:label "exponential time (with linear exponent)"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000047
+:OWLClass_0000000047 rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                       owl:someValuesFrom :OWLClass_0000000026
+                                     ] ;
+                     rdfs:label "complexity specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000048
+:OWLClass_0000000048 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000047 ;
+                     owl:disjointWith :OWLClass_0000000051 ;
+                     rdfs:label "space complexity specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000049
+:OWLClass_0000000049 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000048 ;
+                     owl:disjointWith :OWLClass_0000000050 ;
+                     rdfs:label "run-time space complexity specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000050
+:OWLClass_0000000050 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000048 ;
+                     rdfs:label "train space complexity specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000051
+:OWLClass_0000000051 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000047 ;
+                     rdfs:label "time complexity specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000052
+:OWLClass_0000000052 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000051 ;
+                     owl:disjointWith :OWLClass_0000000053 ;
+                     rdfs:label "run-time time complexity specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000053
+:OWLClass_0000000053 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000051 ;
+                     rdfs:label "train time complexity specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000054
+:OWLClass_0000000054 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000001 ;
+                     rdfs:label "multiobjective optimization"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000055
+:OWLClass_0000000055 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000001 ;
+                     rdfs:label "deterministic"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000056
+:OWLClass_0000000056 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000055 ;
+                     owl:disjointWith :OWLClass_0000000077 ;
+                     rdfs:label "continuous"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000057
+:OWLClass_0000000057 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000056 ;
+                     owl:disjointWith :OWLClass_0000000074 ;
+                     rdfs:label "constrained"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000058
+:OWLClass_0000000058 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000057 ;
+                     rdfs:label "bound constrained"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000059
+:OWLClass_0000000059 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000058 ;
+                     rdfs:label "derivative-free optimization"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000060
+:OWLClass_0000000060 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000057 ,
+                                     :OWLClass_0000000074 ;
+                     rdfs:label "global optimization"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000061
+:OWLClass_0000000061 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000057 ;
+                     rdfs:label "linearly constrained"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000062
+:OWLClass_0000000062 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000061 ;
+                     owl:disjointWith :OWLClass_0000000063 ;
+                     rdfs:label "linear programming"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000063
+:OWLClass_0000000063 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000061 ;
+                     rdfs:label "quadratic programming"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000064
+:OWLClass_0000000064 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000057 ;
+                     rdfs:label "network optimization"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000065
+:OWLClass_0000000065 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000057 ,
+                                     :OWLClass_0000000074 ;
+                     rdfs:label "nondifferentiable optimization"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000066
+:OWLClass_0000000066 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000057 ;
+                     rdfs:label "nonlinear programming"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000067
+:OWLClass_0000000067 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000066 ;
+                     rdfs:label "mathematical programs with equilibrium constraints"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000068
+:OWLClass_0000000068 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000067 ;
+                     rdfs:label "complementarity problems"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000069
+:OWLClass_0000000069 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000066 ;
+                     rdfs:label "mixed integer nonlinear programming"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000070
+:OWLClass_0000000070 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000066 ;
+                     rdfs:label "semidefinite programming"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000071
+:OWLClass_0000000071 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000070 ;
+                     rdfs:label "second-order cone programming"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000072
+:OWLClass_0000000072 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000071 ;
+                     rdfs:label "quadratically-constrained quadratic programming"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000073
+:OWLClass_0000000073 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000066 ;
+                     rdfs:label "semiinfinite programming"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000074
+:OWLClass_0000000074 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000056 ;
+                     rdfs:label "unconstrained"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000075
+:OWLClass_0000000075 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000074 ;
+                     rdfs:label "nonlinear equations"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000076
+:OWLClass_0000000076 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000074 ;
+                     rdfs:label "nonlinear least squares"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000077
+:OWLClass_0000000077 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000055 ;
+                     rdfs:label "discrete"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000078
+:OWLClass_0000000078 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000077 ;
+                     owl:disjointWith :OWLClass_0000000079 ;
+                     rdfs:label "combinatorial optimization"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000079
+:OWLClass_0000000079 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000077 ;
+                     rdfs:label "integer programming"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000080
+:OWLClass_0000000080 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000001 ;
+                     rdfs:label "uncertainity"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000081
+:OWLClass_0000000081 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000080 ;
+                     owl:disjointWith :OWLClass_0000000082 ;
+                     rdfs:label "robust optimization"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000082
+:OWLClass_0000000082 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000080 ;
+                     rdfs:label "stochastic programming"@en .
+
+
+###  http://www.ontodm.com/clus/OntoDM_001024
+<http://www.ontodm.com/clus/OntoDM_001024> rdf:type owl:Class ;
+                                           ace_lexicon:CN_pl "OntoDM_714659s" ;
+                                           ace_lexicon:CN_sg "OntoDM_714659" ;
+                                           rdfs:label "generalization language specification" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#normality_assumption
+:normality_assumption rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :OWLClass_0000000027
+                :OWLClass_0000000028
+                :OWLClass_0000000029
+                :OWLClass_0000000030
+                :OWLClass_0000000031
+                :OWLClass_0000000032
+                :OWLClass_0000000033
+                :OWLClass_0000000034
+                :OWLClass_0000000035
+                :OWLClass_0000000036
+                :OWLClass_0000000037
+                :OWLClass_0000000038
+                :OWLClass_0000000039
+                :OWLClass_0000000040
+                :OWLClass_0000000041
+                :OWLClass_0000000042
+                :OWLClass_0000000043
+                :OWLClass_0000000044
+                :OWLClass_0000000045
+                :OWLClass_0000000046
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :OWLClass_0000000054
+                :OWLClass_0000000055
+                :OWLClass_0000000080
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :OWLClass_0000000058
+                :OWLClass_0000000060
+                :OWLClass_0000000061
+                :OWLClass_0000000064
+                :OWLClass_0000000065
+                :OWLClass_0000000066
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :OWLClass_0000000060
+                :OWLClass_0000000065
+                :OWLClass_0000000075
+                :OWLClass_0000000076
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :OWLClass_0000000067
+                :OWLClass_0000000069
+                :OWLClass_0000000070
+                :OWLClass_0000000073
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
