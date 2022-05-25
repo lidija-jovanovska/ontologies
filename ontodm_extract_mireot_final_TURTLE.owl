@@ -2920,6 +2920,25 @@ Calculating (−1)^n""" ;
                      rdfs:label "stochastic programming"@en .
 
 
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000087
+:OWLClass_0000000087 rdf:type owl:Class ;
+                     rdfs:subClassOf OntoDM-core:OntoDM_201436 ;
+                     owl:disjointWith :OWLClass_0000000089 ;
+                     rdfs:label "algorithm parameter specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000088
+:OWLClass_0000000088 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000087 ;
+                     rdfs:label "algorithm hyperparameter specification"@en .
+
+
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000089
+:OWLClass_0000000089 rdf:type owl:Class ;
+                     rdfs:subClassOf OntoDM-core:OntoDM_201436 ;
+                     rdfs:label "model parameter specification"@en .
+
+
 ###  http://www.ontodm.com/clus/OntoDM_001024
 <http://www.ontodm.com/clus/OntoDM_001024> rdf:type owl:Class ;
                                            ace_lexicon:CN_pl "OntoDM_714659s" ;
