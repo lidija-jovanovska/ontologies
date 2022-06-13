@@ -43,19 +43,19 @@ obo:IAO_0000115 rdf:type owl:AnnotationProperty .
 OntoDM-core:Definition rdf:type owl:AnnotationProperty .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLAnnotationProperty_0000000084
-:OWLAnnotationProperty_0000000084 rdf:type owl:AnnotationProperty ;
-                                  rdfs:label "big O notation"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLAnnotationProperty_0000000084
+OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 rdf:type owl:AnnotationProperty ;
+                                                       rdfs:label "big O notation"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLAnnotationProperty_0000000085
-:OWLAnnotationProperty_0000000085 rdf:type owl:AnnotationProperty ;
-                                  rdfs:label "text specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLAnnotationProperty_0000000085
+OntoDM-core:algorithmsOWLAnnotationProperty_0000000085 rdf:type owl:AnnotationProperty ;
+                                                       rdfs:label "text specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLAnnotationProperty_0000000086
-:OWLAnnotationProperty_0000000086 rdf:type owl:AnnotationProperty ;
-                                  rdfs:label "maths specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLAnnotationProperty_0000000086
+OntoDM-core:algorithmsOWLAnnotationProperty_0000000086 rdf:type owl:AnnotationProperty ;
+                                                       rdfs:label "maths specification"@en .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#comment
@@ -147,19 +147,19 @@ OntoDM-core:OntoDM_000038 rdf:type owl:Class ;
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
-                                            owl:someValuesFrom OntoDM-core:OntoDM_201436
+                                            owl:someValuesFrom OntoDM-core:algorithmsOWLClass_0000000001
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
-                                            owl:someValuesFrom :OWLClass_0000000001
+                                            owl:someValuesFrom OntoDM-core:algorithmsOWLClass_0000000025
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
-                                            owl:someValuesFrom :OWLClass_0000000025
+                                            owl:someValuesFrom OntoDM-core:algorithmsOWLClass_0000000047
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
-                                            owl:someValuesFrom :OWLClass_0000000047
+                                            owl:someValuesFrom :OWLClass_0000000000
                                           ] ;
                           ace_lexicon:CN_pl "OntoDM_000038s" ;
                           ace_lexicon:CN_sg "OntoDM_000038" ;
@@ -263,7 +263,11 @@ OntoDM-core:OntoDM_000192 rdf:type owl:Class ;
 
 ###  http://www.ontodm.com/OntoDM-core/OntoDM_000228
 OntoDM-core:OntoDM_000228 rdf:type owl:Class ;
-                          rdfs:subClassOf OntoDM-core:OntoDM_419460 ;
+                          rdfs:subClassOf OntoDM-core:OntoDM_419460 ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom :OWLClass_0000000002
+                                          ] ;
                           ace_lexicon:CN_pl "OntoDM_000228s" ;
                           ace_lexicon:CN_sg "OntoDM_000228" ;
                           obo:IAO_0000115 "predictive model specification is a single generalization specification and denotes a type of generalization that represents a mapping taking objects of type Td and returns objects of type To." ;
@@ -2514,427 +2518,428 @@ OntoDM-core:OntoDT_10000000114 rdf:type owl:Class ;
                                rdfs:label "multi-target semi-labeled classification dataset"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000001
-:OWLClass_0000000001 rdf:type owl:Class ;
-                     rdfs:comment "" ;
-                     rdfs:label "optimization problem specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000001
+OntoDM-core:algorithmsOWLClass_0000000001 rdf:type owl:Class ;
+                                          rdfs:comment "" ;
+                                          rdfs:label "optimization problem specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000025
-:OWLClass_0000000025 rdf:type owl:Class ;
-                     rdfs:label "algorithm assumption specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000025
+OntoDM-core:algorithmsOWLClass_0000000025 rdf:type owl:Class ;
+                                          rdfs:label "algorithm assumption specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000026
-:OWLClass_0000000026 rdf:type owl:Class ;
-                     :OWLAnnotationProperty_0000000084 "" ;
-                     rdfs:label "complexity function specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000026
+OntoDM-core:algorithmsOWLClass_0000000026 rdf:type owl:Class ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "" ;
+                                          rdfs:label "complexity function specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000027
-:OWLClass_0000000027 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(1)" ;
-                     rdfs:comment """Finding the median value in a sorted array of numbers
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000027
+OntoDM-core:algorithmsOWLClass_0000000027 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(1)" ;
+                                          rdfs:comment """Finding the median value in a sorted array of numbers
 Calculating (−1)^n""" ;
-                     rdfs:label "constant time"@en .
+                                          rdfs:label "constant time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000028
-:OWLClass_0000000028 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(n^3)" ;
-                     rdfs:comment "Naive multiplication of two n x n matrices. Calculating partial correlation." ;
-                     rdfs:label "cubic time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000028
+OntoDM-core:algorithmsOWLClass_0000000028 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(n^3)" ;
+                                          rdfs:comment "Naive multiplication of two n x n matrices. Calculating partial correlation." ;
+                                          rdfs:label "cubic time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000029
-:OWLClass_0000000029 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "2^(2^poly(n))" ;
-                     rdfs:comment "Deciding the truth of a given statement in Presburger arithmetic" ;
-                     rdfs:label "double exponential time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000029
+OntoDM-core:algorithmsOWLClass_0000000029 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "2^(2^poly(n))" ;
+                                          rdfs:comment "Deciding the truth of a given statement in Presburger arithmetic" ;
+                                          rdfs:label "double exponential time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000030
-:OWLClass_0000000030 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "2^(O(n))" ;
-                     rdfs:comment "Solving matrix chain multiplication via brute-force search" ;
-                     rdfs:label "exponential time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000030
+OntoDM-core:algorithmsOWLClass_0000000030 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "2^(O(n))" ;
+                                          rdfs:comment "Solving matrix chain multiplication via brute-force search" ;
+                                          rdfs:label "exponential time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000031
-:OWLClass_0000000031 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(n!)" ;
-                     rdfs:comment "Solving the traveling salesman problem via brute-force search" ;
-                     rdfs:label "factorial time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000031
+OntoDM-core:algorithmsOWLClass_0000000031 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(n!)" ;
+                                          rdfs:comment "Solving the traveling salesman problem via brute-force search" ;
+                                          rdfs:label "factorial time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000032
-:OWLClass_0000000032 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(n^c) where 0 < c < 1" ;
-                     rdfs:comment "Searching in a kd-tree" ;
-                     rdfs:label "fractional power"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000032
+OntoDM-core:algorithmsOWLClass_0000000032 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(n^c) where 0 < c < 1" ;
+                                          rdfs:comment "Searching in a kd-tree" ;
+                                          rdfs:label "fractional power"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000033
-:OWLClass_0000000033 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(alpha(n))" ;
-                     rdfs:comment "Amortized time per operation using a disjoint set" ;
-                     rdfs:label "inverse Ackermann time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000033
+OntoDM-core:algorithmsOWLClass_0000000033 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(alpha(n))" ;
+                                          rdfs:comment "Amortized time per operation using a disjoint set" ;
+                                          rdfs:label "inverse Ackermann time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000034
-:OWLClass_0000000034 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(log* n)" ;
-                     rdfs:comment "Distributed coloring of cycles" ;
-                     rdfs:label "iterated logarithmic time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000034
+OntoDM-core:algorithmsOWLClass_0000000034 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(log* n)" ;
+                                          rdfs:comment "Distributed coloring of cycles" ;
+                                          rdfs:label "iterated logarithmic time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000035
-:OWLClass_0000000035 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(n)" ;
-                     rdfs:comment "Finding the smallest or largest item in an unsorted array, Kadane's algorithm, linear search" ;
-                     rdfs:label "linear time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000035
+OntoDM-core:algorithmsOWLClass_0000000035 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(n)" ;
+                                          rdfs:comment "Finding the smallest or largest item in an unsorted array, Kadane's algorithm, linear search" ;
+                                          rdfs:label "linear time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000036
-:OWLClass_0000000036 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(n log n)" ;
-                     rdfs:comment "Fastest possible comparison sort; Fast Fourier transform" ;
-                     rdfs:label "linearithmic time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000036
+OntoDM-core:algorithmsOWLClass_0000000036 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(n log n)" ;
+                                          rdfs:comment "Fastest possible comparison sort; Fast Fourier transform" ;
+                                          rdfs:label "linearithmic time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000037
-:OWLClass_0000000037 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(log log n)" ;
-                     rdfs:comment "Amortized time per operation using a bounded priority queue" ;
-                     rdfs:label "log-logarithmic time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000037
+OntoDM-core:algorithmsOWLClass_0000000037 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(log log n)" ;
+                                          rdfs:comment "Amortized time per operation using a bounded priority queue" ;
+                                          rdfs:label "log-logarithmic time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000038
-:OWLClass_0000000038 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(log n)" ;
-                     rdfs:comment "Binary search" ;
-                     rdfs:label "logarithmic time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000038
+OntoDM-core:algorithmsOWLClass_0000000038 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(log n)" ;
+                                          rdfs:comment "Binary search" ;
+                                          rdfs:label "logarithmic time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000039
-:OWLClass_0000000039 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(n log* n)" ;
-                     rdfs:comment "Seidel's polygon triangulation algorithm" ;
-                     rdfs:label "n log-star n time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000039
+OntoDM-core:algorithmsOWLClass_0000000039 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(n log* n)" ;
+                                          rdfs:comment "Seidel's polygon triangulation algorithm" ;
+                                          rdfs:label "n log-star n time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000040
-:OWLClass_0000000040 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "poly(log n)" ;
-                     rdfs:label "polylogarithmic time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000040
+OntoDM-core:algorithmsOWLClass_0000000040 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "poly(log n)" ;
+                                          rdfs:label "polylogarithmic time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000041
-:OWLClass_0000000041 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "poly(n) = 2^(O(log n))" ;
-                     rdfs:comment "Karmarkar's algorithm for linear programming; AKS primality test" ;
-                     rdfs:label "polynomial time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000041
+OntoDM-core:algorithmsOWLClass_0000000041 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "poly(n) = 2^(O(log n))" ;
+                                          rdfs:comment "Karmarkar's algorithm for linear programming; AKS primality test" ;
+                                          rdfs:label "polynomial time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000042
-:OWLClass_0000000042 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "O(n^2)" ;
-                     rdfs:comment "Bubble sort; Insertion sort; Direct convolution" ;
-                     rdfs:label "quadratic time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000042
+OntoDM-core:algorithmsOWLClass_0000000042 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "O(n^2)" ;
+                                          rdfs:comment "Bubble sort; Insertion sort; Direct convolution" ;
+                                          rdfs:label "quadratic time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000043
-:OWLClass_0000000043 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "2^(poly(log n))" ;
-                     rdfs:comment "Best-known O(log2n)-approximation algorithm for the directed Steiner tree problem" ;
-                     rdfs:label "quasi-polynomial time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000043
+OntoDM-core:algorithmsOWLClass_0000000043 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "2^(poly(log n))" ;
+                                          rdfs:comment "Best-known O(log2n)-approximation algorithm for the directed Steiner tree problem" ;
+                                          rdfs:label "quasi-polynomial time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000044
-:OWLClass_0000000044 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "n poly(log n)" ;
-                     rdfs:label "quasilinear time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000044
+OntoDM-core:algorithmsOWLClass_0000000044 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "n poly(log n)" ;
+                                          rdfs:label "quasilinear time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000045
-:OWLClass_0000000045 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "2^(o(n))" ,
-                                                       "O(2^(n^e)) for all e > 0" ;
-                     rdfs:comment "Contains BPP unless EXPTIME (see below) equals MA. Best-known algorithm for integer factorization; formerly-best algorithm for graph isomorphism" ;
-                     rdfs:label "sub-exponential time"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000045
+OntoDM-core:algorithmsOWLClass_0000000045 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "2^(o(n))" ,
+                                                                                                 "O(2^(n^e)) for all e > 0" ;
+                                          rdfs:comment "Contains BPP unless EXPTIME (see below) equals MA. Best-known algorithm for integer factorization; formerly-best algorithm for graph isomorphism" ;
+                                          rdfs:label "sub-exponential time"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000046
-:OWLClass_0000000046 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000026 ;
-                     :OWLAnnotationProperty_0000000084 "2^(O(n))" ;
-                     rdfs:comment "Solving the traveling salesman problem using dynamic programming" ;
-                     rdfs:label "exponential time (with linear exponent)"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000046
+OntoDM-core:algorithmsOWLClass_0000000046 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000026 ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "2^(O(n))" ;
+                                          rdfs:comment "Solving the traveling salesman problem using dynamic programming" ;
+                                          rdfs:label "exponential time (with linear exponent)"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000047
-:OWLClass_0000000047 rdf:type owl:Class ;
-                     rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                       owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
-                                       owl:someValuesFrom :OWLClass_0000000026
-                                     ] ;
-                     rdfs:label "complexity specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000047
+OntoDM-core:algorithmsOWLClass_0000000047 rdf:type owl:Class ;
+                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                            owl:someValuesFrom OntoDM-core:algorithmsOWLClass_0000000026
+                                                          ] ;
+                                          OntoDM-core:algorithmsOWLAnnotationProperty_0000000084 "" ;
+                                          rdfs:label "complexity specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000048
-:OWLClass_0000000048 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000047 ;
-                     owl:disjointWith :OWLClass_0000000051 ;
-                     rdfs:label "space complexity specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000048
+OntoDM-core:algorithmsOWLClass_0000000048 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000047 ;
+                                          owl:disjointWith OntoDM-core:algorithmsOWLClass_0000000051 ;
+                                          rdfs:label "space complexity specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000049
-:OWLClass_0000000049 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000048 ;
-                     owl:disjointWith :OWLClass_0000000050 ;
-                     rdfs:label "run-time space complexity specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000049
+OntoDM-core:algorithmsOWLClass_0000000049 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000048 ;
+                                          owl:disjointWith OntoDM-core:algorithmsOWLClass_0000000050 ;
+                                          rdfs:label "run-time space complexity specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000050
-:OWLClass_0000000050 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000048 ;
-                     rdfs:label "train space complexity specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000050
+OntoDM-core:algorithmsOWLClass_0000000050 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000048 ;
+                                          rdfs:label "train space complexity specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000051
-:OWLClass_0000000051 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000047 ;
-                     rdfs:label "time complexity specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000051
+OntoDM-core:algorithmsOWLClass_0000000051 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000047 ;
+                                          rdfs:label "time complexity specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000052
-:OWLClass_0000000052 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000051 ;
-                     owl:disjointWith :OWLClass_0000000053 ;
-                     rdfs:label "run-time time complexity specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000052
+OntoDM-core:algorithmsOWLClass_0000000052 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000051 ;
+                                          owl:disjointWith OntoDM-core:algorithmsOWLClass_0000000053 ;
+                                          rdfs:label "run-time time complexity specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000053
-:OWLClass_0000000053 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000051 ;
-                     rdfs:label "train time complexity specification"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000053
+OntoDM-core:algorithmsOWLClass_0000000053 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000051 ;
+                                          rdfs:label "train time complexity specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000054
-:OWLClass_0000000054 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000001 ;
-                     rdfs:label "multiobjective optimization"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000054
+OntoDM-core:algorithmsOWLClass_0000000054 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000001 ;
+                                          rdfs:label "multiobjective optimization"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000055
-:OWLClass_0000000055 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000001 ;
-                     rdfs:label "deterministic"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000055
+OntoDM-core:algorithmsOWLClass_0000000055 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000001 ;
+                                          rdfs:label "deterministic"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000056
-:OWLClass_0000000056 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000055 ;
-                     owl:disjointWith :OWLClass_0000000077 ;
-                     rdfs:label "continuous"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000056
+OntoDM-core:algorithmsOWLClass_0000000056 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000055 ;
+                                          owl:disjointWith OntoDM-core:algorithmsOWLClass_0000000077 ;
+                                          rdfs:label "continuous"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000057
-:OWLClass_0000000057 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000056 ;
-                     owl:disjointWith :OWLClass_0000000074 ;
-                     rdfs:label "constrained"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000057
+OntoDM-core:algorithmsOWLClass_0000000057 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000056 ;
+                                          owl:disjointWith OntoDM-core:algorithmsOWLClass_0000000074 ;
+                                          rdfs:label "constrained"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000058
-:OWLClass_0000000058 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000057 ;
-                     rdfs:label "bound constrained"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000058
+OntoDM-core:algorithmsOWLClass_0000000058 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000057 ;
+                                          rdfs:label "bound constrained"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000059
-:OWLClass_0000000059 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000058 ;
-                     rdfs:label "derivative-free optimization"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000059
+OntoDM-core:algorithmsOWLClass_0000000059 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000058 ;
+                                          rdfs:label "derivative-free optimization"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000060
-:OWLClass_0000000060 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000057 ,
-                                     :OWLClass_0000000074 ;
-                     rdfs:label "global optimization"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000060
+OntoDM-core:algorithmsOWLClass_0000000060 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000057 ,
+                                                          OntoDM-core:algorithmsOWLClass_0000000074 ;
+                                          rdfs:label "global optimization"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000061
-:OWLClass_0000000061 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000057 ;
-                     rdfs:label "linearly constrained"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000061
+OntoDM-core:algorithmsOWLClass_0000000061 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000057 ;
+                                          rdfs:label "linearly constrained"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000062
-:OWLClass_0000000062 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000061 ;
-                     owl:disjointWith :OWLClass_0000000063 ;
-                     rdfs:label "linear programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000062
+OntoDM-core:algorithmsOWLClass_0000000062 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000061 ;
+                                          owl:disjointWith OntoDM-core:algorithmsOWLClass_0000000063 ;
+                                          rdfs:label "linear programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000063
-:OWLClass_0000000063 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000061 ;
-                     rdfs:label "quadratic programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000063
+OntoDM-core:algorithmsOWLClass_0000000063 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000061 ;
+                                          rdfs:label "quadratic programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000064
-:OWLClass_0000000064 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000057 ;
-                     rdfs:label "network optimization"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000064
+OntoDM-core:algorithmsOWLClass_0000000064 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000057 ;
+                                          rdfs:label "network optimization"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000065
-:OWLClass_0000000065 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000057 ,
-                                     :OWLClass_0000000074 ;
-                     rdfs:label "nondifferentiable optimization"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000065
+OntoDM-core:algorithmsOWLClass_0000000065 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000057 ,
+                                                          OntoDM-core:algorithmsOWLClass_0000000074 ;
+                                          rdfs:label "nondifferentiable optimization"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000066
-:OWLClass_0000000066 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000057 ;
-                     rdfs:label "nonlinear programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000066
+OntoDM-core:algorithmsOWLClass_0000000066 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000057 ;
+                                          rdfs:label "nonlinear programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000067
-:OWLClass_0000000067 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000066 ;
-                     rdfs:label "mathematical programs with equilibrium constraints"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000067
+OntoDM-core:algorithmsOWLClass_0000000067 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000066 ;
+                                          rdfs:label "mathematical programs with equilibrium constraints"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000068
-:OWLClass_0000000068 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000067 ;
-                     rdfs:label "complementarity problems"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000068
+OntoDM-core:algorithmsOWLClass_0000000068 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000067 ;
+                                          rdfs:label "complementarity problems"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000069
-:OWLClass_0000000069 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000066 ;
-                     rdfs:label "mixed integer nonlinear programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000069
+OntoDM-core:algorithmsOWLClass_0000000069 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000066 ;
+                                          rdfs:label "mixed integer nonlinear programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000070
-:OWLClass_0000000070 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000066 ;
-                     rdfs:label "semidefinite programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000070
+OntoDM-core:algorithmsOWLClass_0000000070 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000066 ;
+                                          rdfs:label "semidefinite programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000071
-:OWLClass_0000000071 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000070 ;
-                     rdfs:label "second-order cone programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000071
+OntoDM-core:algorithmsOWLClass_0000000071 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000070 ;
+                                          rdfs:label "second-order cone programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000072
-:OWLClass_0000000072 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000071 ;
-                     rdfs:label "quadratically-constrained quadratic programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000072
+OntoDM-core:algorithmsOWLClass_0000000072 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000071 ;
+                                          rdfs:label "quadratically-constrained quadratic programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000073
-:OWLClass_0000000073 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000066 ;
-                     rdfs:label "semiinfinite programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000073
+OntoDM-core:algorithmsOWLClass_0000000073 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000066 ;
+                                          rdfs:label "semiinfinite programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000074
-:OWLClass_0000000074 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000056 ;
-                     rdfs:label "unconstrained"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000074
+OntoDM-core:algorithmsOWLClass_0000000074 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000056 ;
+                                          rdfs:label "unconstrained"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000075
-:OWLClass_0000000075 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000074 ;
-                     rdfs:label "nonlinear equations"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000075
+OntoDM-core:algorithmsOWLClass_0000000075 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000074 ;
+                                          rdfs:label "nonlinear equations"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000076
-:OWLClass_0000000076 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000074 ;
-                     rdfs:label "nonlinear least squares"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000076
+OntoDM-core:algorithmsOWLClass_0000000076 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000074 ;
+                                          rdfs:label "nonlinear least squares"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000077
-:OWLClass_0000000077 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000055 ;
-                     rdfs:label "discrete"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000077
+OntoDM-core:algorithmsOWLClass_0000000077 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000055 ;
+                                          rdfs:label "discrete"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000078
-:OWLClass_0000000078 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000077 ;
-                     owl:disjointWith :OWLClass_0000000079 ;
-                     rdfs:label "combinatorial optimization"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000078
+OntoDM-core:algorithmsOWLClass_0000000078 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000077 ;
+                                          owl:disjointWith OntoDM-core:algorithmsOWLClass_0000000079 ;
+                                          rdfs:label "combinatorial optimization"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000079
-:OWLClass_0000000079 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000077 ;
-                     rdfs:label "integer programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000079
+OntoDM-core:algorithmsOWLClass_0000000079 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000077 ;
+                                          rdfs:label "integer programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000080
-:OWLClass_0000000080 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000001 ;
-                     rdfs:label "uncertainity"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000080
+OntoDM-core:algorithmsOWLClass_0000000080 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000001 ;
+                                          rdfs:label "uncertainity"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000081
-:OWLClass_0000000081 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000080 ;
-                     owl:disjointWith :OWLClass_0000000082 ;
-                     rdfs:label "robust optimization"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000081
+OntoDM-core:algorithmsOWLClass_0000000081 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000080 ;
+                                          owl:disjointWith OntoDM-core:algorithmsOWLClass_0000000082 ;
+                                          rdfs:label "robust optimization"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000082
-:OWLClass_0000000082 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000080 ;
-                     rdfs:label "stochastic programming"@en .
+###  http://www.ontodm.com/OntoDM-core/algorithmsOWLClass_0000000082
+OntoDM-core:algorithmsOWLClass_0000000082 rdf:type owl:Class ;
+                                          rdfs:subClassOf OntoDM-core:algorithmsOWLClass_0000000080 ;
+                                          rdfs:label "stochastic programming"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000087
-:OWLClass_0000000087 rdf:type owl:Class ;
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000000
+:OWLClass_0000000000 rdf:type owl:Class ;
                      rdfs:subClassOf OntoDM-core:OntoDM_201436 ;
-                     owl:disjointWith :OWLClass_0000000089 ;
+                     owl:disjointWith :OWLClass_0000000002 ;
                      rdfs:label "algorithm parameter specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000088
-:OWLClass_0000000088 rdf:type owl:Class ;
-                     rdfs:subClassOf :OWLClass_0000000087 ;
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000001
+:OWLClass_0000000001 rdf:type owl:Class ;
+                     rdfs:subClassOf :OWLClass_0000000000 ;
                      rdfs:label "algorithm hyperparameter specification"@en .
 
 
-###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000089
-:OWLClass_0000000089 rdf:type owl:Class ;
+###  http://www.ontodm.com/OntoDM-core/algorithms#OWLClass_0000000002
+:OWLClass_0000000002 rdf:type owl:Class ;
                      rdfs:subClassOf OntoDM-core:OntoDM_201436 ;
                      rdfs:label "model parameter specification"@en .
 
@@ -2947,75 +2952,67 @@ Calculating (−1)^n""" ;
 
 
 #################################################################
-#    Individuals
-#################################################################
-
-###  http://www.ontodm.com/OntoDM-core/algorithms#normality_assumption
-:normality_assumption rdf:type owl:NamedIndividual .
-
-
-#################################################################
 #    General axioms
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :OWLClass_0000000027
-                :OWLClass_0000000028
-                :OWLClass_0000000029
-                :OWLClass_0000000030
-                :OWLClass_0000000031
-                :OWLClass_0000000032
-                :OWLClass_0000000033
-                :OWLClass_0000000034
-                :OWLClass_0000000035
-                :OWLClass_0000000036
-                :OWLClass_0000000037
-                :OWLClass_0000000038
-                :OWLClass_0000000039
-                :OWLClass_0000000040
-                :OWLClass_0000000041
-                :OWLClass_0000000042
-                :OWLClass_0000000043
-                :OWLClass_0000000044
-                :OWLClass_0000000045
-                :OWLClass_0000000046
+  owl:members ( OntoDM-core:algorithmsOWLClass_0000000027
+                OntoDM-core:algorithmsOWLClass_0000000028
+                OntoDM-core:algorithmsOWLClass_0000000029
+                OntoDM-core:algorithmsOWLClass_0000000030
+                OntoDM-core:algorithmsOWLClass_0000000031
+                OntoDM-core:algorithmsOWLClass_0000000032
+                OntoDM-core:algorithmsOWLClass_0000000033
+                OntoDM-core:algorithmsOWLClass_0000000034
+                OntoDM-core:algorithmsOWLClass_0000000035
+                OntoDM-core:algorithmsOWLClass_0000000036
+                OntoDM-core:algorithmsOWLClass_0000000037
+                OntoDM-core:algorithmsOWLClass_0000000038
+                OntoDM-core:algorithmsOWLClass_0000000039
+                OntoDM-core:algorithmsOWLClass_0000000040
+                OntoDM-core:algorithmsOWLClass_0000000041
+                OntoDM-core:algorithmsOWLClass_0000000042
+                OntoDM-core:algorithmsOWLClass_0000000043
+                OntoDM-core:algorithmsOWLClass_0000000044
+                OntoDM-core:algorithmsOWLClass_0000000045
+                OntoDM-core:algorithmsOWLClass_0000000046
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :OWLClass_0000000054
-                :OWLClass_0000000055
-                :OWLClass_0000000080
+  owl:members ( OntoDM-core:algorithmsOWLClass_0000000054
+                OntoDM-core:algorithmsOWLClass_0000000055
+                OntoDM-core:algorithmsOWLClass_0000000080
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :OWLClass_0000000058
-                :OWLClass_0000000060
-                :OWLClass_0000000061
-                :OWLClass_0000000064
-                :OWLClass_0000000065
-                :OWLClass_0000000066
+  owl:members ( OntoDM-core:algorithmsOWLClass_0000000058
+                OntoDM-core:algorithmsOWLClass_0000000060
+                OntoDM-core:algorithmsOWLClass_0000000061
+                OntoDM-core:algorithmsOWLClass_0000000064
+                OntoDM-core:algorithmsOWLClass_0000000065
+                OntoDM-core:algorithmsOWLClass_0000000066
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :OWLClass_0000000060
-                :OWLClass_0000000065
-                :OWLClass_0000000075
-                :OWLClass_0000000076
+  owl:members ( OntoDM-core:algorithmsOWLClass_0000000060
+                OntoDM-core:algorithmsOWLClass_0000000065
+                OntoDM-core:algorithmsOWLClass_0000000075
+                OntoDM-core:algorithmsOWLClass_0000000076
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :OWLClass_0000000067
-                :OWLClass_0000000069
-                :OWLClass_0000000070
-                :OWLClass_0000000073
+  owl:members ( OntoDM-core:algorithmsOWLClass_0000000067
+                OntoDM-core:algorithmsOWLClass_0000000069
+                OntoDM-core:algorithmsOWLClass_0000000070
+                OntoDM-core:algorithmsOWLClass_0000000073
               )
 ] .
 
