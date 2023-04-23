@@ -6,4 +6,4 @@ OntoDM-algorithms provided the backbone for the semantic annotation schema that 
 
 ### More info.
 
-The design of the ontology is described in detail in Chapter 3 in my MSc thesis (p. 21).
+The design of the ontology is described in detail in Chapter 3 in my [MSc thesis](https://drive.google.com/file/d/1vyV6YlN47wOhkFUvjNq_JC63hnleZo9y/view) (p. 21).
